@@ -9,44 +9,103 @@ description: Frontend developer building fast, accessible Magento 2 storefronts 
   <canvas id="aurora" aria-hidden="true" width="466" height="192"></canvas>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow"><span class="avail" aria-hidden="true"></span> Frontend developer · Magento 2 &amp; Hyvä · Open to projects</p>
-      <h1 class="display"><span class="w">Storefronts</span> <span class="w" style="animation-delay:.08s">that</span> <em style="animation-delay:.16s">feel</em> <span class="w" style="animation-delay:.24s">instant.</span></h1>
-      <p class="lede">I'm Ben. I design and build fast, accessible Magento 2 storefronts with Hyvä, Tailwind CSS and Alpine.js, plus transactional emails that still look right in Outlook.</p>
+      <div class="hero-id">
+        <span class="avatar"><img src="/assets/img/me.jpg" alt="Photo of Ben" width="64" height="64"><span class="avail"
+            aria-hidden="true"></span></span>
+        <p class="eyebrow">Frontend developer · Open to projects</p>
+      </div>
+      <h1 class="display"><span class="w">Hello</span> <span class="w" style="animation-delay:.08s">There!</span><br>
+        <span class="w" style="animation-delay:.16s">I'm</span> <em style="animation-delay:.24s">Ben</em></h1>
+      <p class="lede">I turn designs into fast, accessible, hand-built interfaces: storefronts, marketing sites, components
+        and the emails that land after checkout. Semantic HTML, careful CSS and only as much JavaScript as the job
+        needs.</p>
       <div class="cta-row">
-        <a class="btn btn-primary magnetic" href="#work">See selected work</a>
-        <a class="btn btn-ghost magnetic" href="#contact">Start a conversation →</a>
+        <a class="btn btn-primary magnetic" href="#work">See my work</a>
+        <a class="btn btn-ghost magnetic" href="#contact">Let's build something →</a>
       </div>
       <div class="facts">
-        <span><b>8+</b> years on Magento 2</span>
-        <span><b>20+</b> Hyvä / Magento 2 themes shipped</span>
-        <span><b>0</b> jQuery on the critical path</span>
+        <span><b>8+</b> years building for the web</span>
+        <span><b>15+</b> live sites shipped</span>
+        <span><b>100</b> accessibility, as standard</span>
       </div>
     </div>
 
-    <aside class="hero-card" aria-label="Example Hyvä component">
-      <div class="card-top"><span class="file">Magento_Catalog/templates/product/qty.phtml</span><span class="pill">Alpine.js</span></div>
-<pre class="code"><code><span class="t">&lt;div</span> <span class="a">x-data</span>=<span class="s">"{ qty: 1 }"</span>
-     <span class="a">class</span>=<span class="s">"flex items-center gap-2"</span><span class="t">&gt;</span>
-  <span class="t">&lt;button</span> <span class="a">@click</span>=<span class="s">"qty = Math.max(1, qty - 1)"</span>
-          <span class="a">aria-label</span>=<span class="s">"Decrease quantity"</span><span class="t">&gt;</span>−<span class="t">&lt;/button&gt;</span>
-  <span class="t">&lt;output</span> <span class="a">x-text</span>=<span class="s">"qty"</span> <span class="a">class</span>=<span class="s">"w-10 text-center"</span><span class="t">&gt;&lt;/output&gt;</span>
-  <span class="t">&lt;button</span> <span class="a">@click</span>=<span class="s">"qty++"</span>
-          <span class="a">aria-label</span>=<span class="s">"Increase quantity"</span><span class="t">&gt;</span>+<span class="t">&lt;/button&gt;</span>
-<span class="t">&lt;/div&gt;</span><span class="caret" aria-hidden="true"></span></code></pre>
-      <div class="demo">
-        <small>Rendered</small>
-        <div class="stepper" role="group" aria-label="Quantity">
-          <button type="button" id="qtyDec" aria-label="Decrease quantity">−</button>
-          <output id="qtyVal" aria-live="polite">1</output>
-          <button type="button" id="qtyInc" aria-label="Increase quantity">+</button>
+    <aside class="hero-card" aria-label="A peek at how I build">
+      <div class="card-top">
+        <div class="tabs" role="tablist" aria-label="Source files">
+          <button type="button" role="tab" id="tab-about" aria-controls="pane-about" aria-selected="true">about.js</button>
+          <button type="button" role="tab" id="tab-html" aria-controls="pane-html" aria-selected="false" tabindex="-1">index.html</button>
+          <button type="button" role="tab" id="tab-css" aria-controls="pane-css" aria-selected="false" tabindex="-1">styles.css</button>
         </div>
+        <span class="pill">main</span>
       </div>
-      <div class="gauges">
-        <figure class="gauge"><div class="ring"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="bg" cx="28" cy="28" r="24"></circle><circle class="fg" cx="28" cy="28" r="24" style="--v:99"></circle></svg><span class="n">99</span></div><figcaption>Performance</figcaption></figure>
-        <figure class="gauge"><div class="ring"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="bg" cx="28" cy="28" r="24"></circle><circle class="fg" cx="28" cy="28" r="24" style="--v:100"></circle></svg><span class="n">100</span></div><figcaption>Accessibility</figcaption></figure>
-        <figure class="gauge"><div class="ring"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="bg" cx="28" cy="28" r="24"></circle><circle class="fg" cx="28" cy="28" r="24" style="--v:100"></circle></svg><span class="n">100</span></div><figcaption>Best practices</figcaption></figure>
-        <figure class="gauge"><div class="ring"><svg viewBox="0 0 56 56" aria-hidden="true"><circle class="bg" cx="28" cy="28" r="24"></circle><circle class="fg" cx="28" cy="28" r="24" style="--v:100"></circle></svg><span class="n">100</span></div><figcaption>SEO</figcaption></figure>
-        <p class="gauge-note">Lighthouse, mobile · Hyvä product page</p>
+
+      <div class="panes">
+      <pre class="code" role="tabpanel" id="pane-about" aria-labelledby="tab-about" tabindex="0"><code><span class="a">const</span> ben = {
+  role: <span class="s">'Frontend developer'</span>,
+  writes: [<span class="s">'HTML'</span>, <span class="s">'CSS'</span>, <span class="s">'JavaScript'</span>],
+  builds: [<span class="s">'storefronts'</span>, <span class="s">'sites'</span>, <span class="s">'emails'</span>],
+  caresAbout: [<span class="s">'speed'</span>, <span class="s">'access'</span>, <span class="s">'detail'</span>],
+};
+
+<span class="p">// give me a design, get back a website</span>
+ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span class="caret" aria-hidden="true"></span></code></pre>
+
+      <pre class="code" role="tabpanel" id="pane-html" aria-labelledby="tab-html" tabindex="0" hidden><code><span class="t">&lt;article</span> <span class="a">class</span>=<span class="s">"card"</span><span class="t">&gt;</span>
+  <span class="t">&lt;img</span> <span class="a">src</span>=<span class="s">"hero.avif"</span> <span class="a">alt</span>=<span class="s">"Work in progress"</span>
+       <span class="a">width</span>=<span class="s">"640"</span> <span class="a">height</span>=<span class="s">"400"</span><span class="t">&gt;</span>
+  <span class="t">&lt;h2&gt;</span>Built to last<span class="t">&lt;/h2&gt;</span>
+  <span class="t">&lt;p&gt;</span>Semantic, keyboard-friendly, no layout shift.<span class="t">&lt;/p&gt;</span>
+  <span class="t">&lt;a</span> <span class="a">href</span>=<span class="s">"#contact"</span><span class="t">&gt;</span>Say hello<span class="t">&lt;/a&gt;</span>
+<span class="t">&lt;/article&gt;</span><span class="caret" aria-hidden="true"></span></code></pre>
+
+      <pre class="code" role="tabpanel" id="pane-css" aria-labelledby="tab-css" tabindex="0" hidden><code><span class="t">.card</span> {
+  <span class="a">display</span>: grid;
+  <span class="a">gap</span>: clamp(<span class="s">1rem</span>, <span class="s">3vw</span>, <span class="s">2rem</span>);
+  <span class="a">container-type</span>: inline-size;
+}
+<span class="t">@media</span> (prefers-reduced-motion: reduce) {
+  <span class="t">*</span> { <span class="a">animation</span>: none; }
+}
+<span class="p">/* fast, fluid, kind to everyone */</span><span class="caret" aria-hidden="true"></span></code></pre>
+      </div>
+
+      <div class="build" aria-hidden="true">
+        <span class="build-cmd"><span class="p">$</span> npm run build</span>
+        <span class="build-bar"><i></i></span>
+        <span class="build-ok">✓ built in 0.24s</span>
+      </div>
+
+      <div class="gauges hidden">
+        <figure class="gauge">
+          <div class="ring"><svg viewBox="0 0 56 56" aria-hidden="true">
+              <circle class="bg" cx="28" cy="28" r="24"></circle>
+              <circle class="fg" cx="28" cy="28" r="24" style="--v:99"></circle>
+            </svg><span class="n">99</span></div>
+          <figcaption>Performance</figcaption>
+        </figure>
+        <figure class="gauge">
+          <div class="ring"><svg viewBox="0 0 56 56" aria-hidden="true">
+              <circle class="bg" cx="28" cy="28" r="24"></circle>
+              <circle class="fg" cx="28" cy="28" r="24" style="--v:100"></circle>
+            </svg><span class="n">100</span></div>
+          <figcaption>Accessibility</figcaption>
+        </figure>
+        <figure class="gauge">
+          <div class="ring"><svg viewBox="0 0 56 56" aria-hidden="true">
+              <circle class="bg" cx="28" cy="28" r="24"></circle>
+              <circle class="fg" cx="28" cy="28" r="24" style="--v:100"></circle>
+            </svg><span class="n">100</span></div>
+          <figcaption>Best practices</figcaption>
+        </figure>
+        <figure class="gauge">
+          <div class="ring"><svg viewBox="0 0 56 56" aria-hidden="true">
+              <circle class="bg" cx="28" cy="28" r="24"></circle>
+              <circle class="fg" cx="28" cy="28" r="24" style="--v:100"></circle>
+            </svg><span class="n">100</span></div>
+          <figcaption>SEO</figcaption>
+        </figure>
+        <p class="gauge-note">Lighthouse, mobile · the standard I build to</p>
       </div>
     </aside>
   </div>
@@ -54,130 +113,97 @@ description: Frontend developer building fast, accessible Magento 2 storefronts 
 
 <div class="marquee" aria-label="Tools I work with">
   <ul>
-    <li>Magento 2</li><li>Hyvä Themes</li><li>Hyvä Checkout</li><li>Tailwind CSS</li><li>Alpine.js</li><li>Magewire</li><li>Layout XML</li><li>GraphQL</li><li>MJML</li><li>Figma</li><li>WCAG 2.2</li><li>Core Web Vitals</li>
-    <li aria-hidden="true">Magento 2</li><li aria-hidden="true">Hyvä Themes</li><li aria-hidden="true">Hyvä Checkout</li><li aria-hidden="true">Tailwind CSS</li><li aria-hidden="true">Alpine.js</li><li aria-hidden="true">Magewire</li><li aria-hidden="true">Layout XML</li><li aria-hidden="true">GraphQL</li><li aria-hidden="true">MJML</li><li aria-hidden="true">Figma</li><li aria-hidden="true">WCAG 2.2</li><li aria-hidden="true">Core Web Vitals</li>
+    <li>Magento 2</li>
+    <li>Hyvä Themes</li>
+    <li>Hyvä Checkout</li>
+    <li>Tailwind CSS</li>
+    <li>Alpine.js</li>
+    <li>Layout XML</li>
+    <li>Figma</li>
+    <li>WCAG 2.2</li>
+    <li>Core Web Vitals</li>
+    <li aria-hidden="true">Magento 2</li>
+    <li aria-hidden="true">Hyvä Themes</li>
+    <li aria-hidden="true">Hyvä Checkout</li>
+    <li aria-hidden="true">Tailwind CSS</li>
+    <li aria-hidden="true">Alpine.js</li>
+    <li aria-hidden="true">Layout XML</li>
+    <li aria-hidden="true">Figma</li>
+    <li aria-hidden="true">WCAG 2.2</li>
+    <li aria-hidden="true">Core Web Vitals</li>
   </ul>
 </div>
 
 <main>
   <section class="section" id="work" aria-labelledby="work-title">
     <div class="wrap">
-      <div class="section-head">
+      <!-- <div class="section-head">
         <div>
           <p class="eyebrow">Selected work · 2024–2026</p>
           <h2 class="display" id="work-title">Storefronts, components and emails that ship on time.</h2>
         </div>
-        <p>A mix of full Hyvä builds, Luma migrations and the smaller pieces that make trade buying easier. Each one was measured before and after launch.</p>
+        <p>A mix of full Hyvä builds, Luma migrations and the smaller pieces that make trade buying easier. Each one was
+          measured before and after launch.</p>
+      </div> -->
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Selected work · 2018–2026</p>
+          <h2 class="display" id="work-title">What I've worked on.</h2>
+        </div>
+        <!-- <p>A mix of full Hyvä builds, Luma migrations and the smaller pieces that make trade buying easier. Each one was
+          measured before and after launch.</p> -->
       </div>
 
       <div class="work-grid">
-        <article class="card">
-          <div class="mock" style="--c1:#3f6b5a;--c2:#0f201b" aria-hidden="true">
-            <div class="win">
-              <div class="m-bar"><i></i><i></i><i></i><span>oakridge-trade.co.uk/timber-sheet</span></div>
-              <div class="m-page" style="--mc:#2e6b58">
-                <div class="m-nav"><b></b><span></span><span></span><span></span><em></em></div>
-                <div class="m-hero" style="background:linear-gradient(120deg,#2e5a4b,#9dbf98)"><span></span><span></span></div>
-                <div class="m-grid"><i></i><i></i><i></i><i></i></div>
+        {%- for p in work %}
+        <article class="card"{% if forloop.index > 4 %} data-extra style="--i:{{ forloop.index | minus: 5 }}"{% endif %}>
+          <div class="mock" style="--c1:{{ p.c1 }};--c2:{{ p.c2 }}">
+            <div class="win win-shot">
+              <div class="m-bar" aria-hidden="true"><i></i><i></i><i></i><span>{{ p.url }}</span></div>
+              <div class="m-shot" tabindex="0" role="region" aria-label="{{ p.name }} screenshot (scrollable)">
+                <img src="/assets/img/{{ p.img }}" alt="Full-page screenshot of the {{ p.name }} website" loading="lazy" decoding="async">
               </div>
             </div>
+            <button class="zoom-btn" type="button" data-zoom="/assets/img/{{ p.img }}" data-title="{{ p.name }}"
+              aria-label="Magnify {{ p.name }} screenshot">
+              <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Magnify
+            </button>
           </div>
           <div class="card-body">
-            <p class="meta">2026 · Luma → Hyvä migration</p>
-            <h3>Oakridge Trade Supplies</h3>
-            <p>Moved a 40,000-SKU builders' merchant from Luma to Hyvä, rebuilding the category, product and account templates without touching the ERP integration.</p>
+            <p class="meta">{{ p.meta }}</p>
+            <h3>{{ p.name }}</h3>
+            <p>{{ p.summary }}</p>
+            {%- if p.metrics %}
             <div class="metrics">
-              <div class="metric"><b>1.3s</b><span>LCP, was 4.8s</span></div>
-              <div class="metric"><b>−82%</b><span>JavaScript shipped</span></div>
-              <div class="metric"><b>+19%</b><span>mobile conversion</span></div>
+              {%- for m in p.metrics %}
+              <div class="metric"><b>{{ m.value }}</b><span>{{ m.label }}</span></div>
+              {%- endfor %}
             </div>
-            <div class="tags"><span>Hyvä</span><span>Tailwind</span><span>Magewire</span><a href="#">Case study →</a></div>
+            {%- endif %}
+            <div class="tags">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}<a href="{{ p.link | default: '#' }}">Case study →</a></div>
           </div>
         </article>
-
-        <article class="card">
-          <div class="mock" style="--c1:#b87a26;--c2:#2a1a08" aria-hidden="true">
-            <div class="win">
-              <div class="m-bar"><i></i><i></i><i></i><span>trade.voltmark.co.uk/quick-order</span></div>
-              <div class="m-page">
-                <div class="m-nav" style="--mc:#e0a13a"><b style="background:#2a1a08"></b><span></span><span></span><em></em></div>
-                <div class="m-table">
-                  <div class="m-row h"><span>SKU</span><span>Qty</span><span class="pr">Price</span></div>
-                  <div class="m-row"><span>VM-CBL-2.5T&amp;E</span><span class="q"></span><span class="pr">£42.10</span></div>
-                  <div class="m-row"><span>VM-SKT-DBL-13A</span><span class="q"></span><span class="pr">£3.84</span></div>
-                  <div class="m-row"><span>VM-MCB-B32</span><span class="q"></span><span class="pr">£6.20</span></div>
-                  <span class="m-add"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <p class="meta">2025 · B2B components</p>
-            <h3>Voltmark quick order</h3>
-            <p>SKU search, CSV upload and requisition lists for trade accounts, built as Alpine components on Hyvä with account pricing pulled over GraphQL.</p>
-            <div class="metrics">
-              <div class="metric"><b>3×</b><span>faster repeat orders</span></div>
-              <div class="metric"><b>41%</b><span>of orders via quick order</span></div>
-            </div>
-            <div class="tags"><span>Alpine.js</span><span>GraphQL</span><span>Hyvä Checkout</span><a href="#">Case study →</a></div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="mock" style="--c1:#7a4fd0;--c2:#1a1033" aria-hidden="true">
-            <div class="win">
-              <div class="m-bar"><i></i><i></i><i></i><span>fernhillhome.co.uk/styleguide</span></div>
-              <div class="m-page">
-                <div class="m-sys">
-                  <span class="m-aa">Aa</span>
-                  <div style="display:grid;gap:8px">
-                    <div class="m-sw"><i style="background:#2b2140"></i><i style="background:#7a4fd0"></i><i style="background:#c7b4f2"></i><i style="background:#f0a86a"></i><i style="background:#e9e4f4"></i></div>
-                    <div class="m-btns"><span></span><span></span><span></span></div>
-                  </div>
-                </div>
-                <div class="m-chips"><span></span><span></span><span></span><span></span></div>
-                <div class="m-grid"><i></i><i></i><i></i><i></i></div>
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <p class="meta">2025 · Design system</p>
-            <h3>Fernhill Home components</h3>
-            <p>A tokenised Tailwind theme with over sixty documented components, kept in step between the Figma library and the live Hyvä storefront.</p>
-            <div class="metrics">
-              <div class="metric"><b>64</b><span>components</span></div>
-              <div class="metric"><b>100</b><span>accessibility score</span></div>
-            </div>
-            <div class="tags"><span>Tailwind</span><span>Figma</span><span>WCAG 2.2 AA</span><a href="#">Case study →</a></div>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="mock" style="--c1:#2f6f8f;--c2:#0a1a26" aria-hidden="true">
-            <div class="win">
-              <div class="m-bar"><i></i><i></i><i></i><span>Your order #100004821 is confirmed</span></div>
-              <div class="m-mail">
-                <div class="hd"></div>
-                <div class="tl"></div>
-                <div class="ln"></div><div class="ln s"></div>
-                <div class="bt"></div>
-                <div class="it"><i></i><div style="display:grid;gap:4px"><div class="ln"></div><div class="ln s"></div></div></div>
-                <div class="it"><i></i><div style="display:grid;gap:4px"><div class="ln"></div><div class="ln s"></div></div></div>
-              </div>
-            </div>
-          </div>
-          <div class="card-body">
-            <p class="meta">2024 · Email development</p>
-            <h3>Transactional email suite</h3>
-            <p>Every Magento sales email rebuilt in MJML with dark-mode support, from order confirmation to credit memo, and tested across the clients customers actually use.</p>
-            <div class="metrics">
-              <div class="metric"><b>22</b><span>templates rebuilt</span></div>
-              <div class="metric"><b>38</b><span>client and device checks</span></div>
-            </div>
-            <div class="tags"><span>MJML</span><span>Magento email</span><span>Outlook 2016+</span><a href="#">Case study →</a></div>
-          </div>
-        </article>
+        {%- endfor %}
       </div>
+      {%- assign extra = work.size | minus: 4 %}
+      {%- if extra > 0 %}
+      <div class="work-more">
+        <button class="btn btn-ghost magnetic" type="button" id="work-more" aria-expanded="false" hidden>
+          Reveal more work <span class="work-more-count">+{{ extra }}</span>
+        </button>
+      </div>
+      {%- endif %}
+
+      <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-title">
+        <div class="lb-head">
+          <p class="lb-title" id="lightbox-title"></p>
+          <button class="lb-close" type="button" aria-label="Close">✕</button>
+        </div>
+        <div class="lb-body" tabindex="0">
+          <img alt="">
+        </div>
+      </dialog>
     </div>
   </section>
 
@@ -186,23 +212,37 @@ description: Frontend developer building fast, accessible Magento 2 storefronts 
     <div class="wrap forest-inner">
       <div class="forest-head">
         <p class="eyebrow">The stack, layer by layer</p>
-        <h2 class="display" id="stack-title">Solid from the ground up.<br><span class="glow">Built at every layer.</span></h2>
+        <h2 class="display" id="stack-title">Solid from the ground up.<br><span class="glow">Built at every
+            layer.</span></h2>
         <p>Five layers, each one tested before the next goes on top. Hover or tap a layer to light up its ridge.</p>
       </div>
       <div>
         <ol class="layers">
-          <li tabindex="0" data-layer="4"><span class="num">01</span><span class="body"><span class="kind">Markup</span><strong>Semantic HTML &amp; WCAG 2.2 AA</strong><span class="desc">Keyboard and screen-reader tested on every template</span></span><span class="arr" aria-hidden="true">→</span></li>
-          <li tabindex="0" data-layer="3"><span class="num">02</span><span class="body"><span class="kind">Styling</span><strong>Tailwind CSS &amp; design tokens</strong><span class="desc">One tailwind.config.js shared by theme and Figma</span></span><span class="arr" aria-hidden="true">→</span></li>
-          <li tabindex="0" data-layer="2"><span class="num">03</span><span class="body"><span class="kind">Behaviour</span><strong>Alpine.js &amp; Magewire</strong><span class="desc">Small components, no RequireJS or Knockout</span></span><span class="arr" aria-hidden="true">→</span></li>
-          <li tabindex="0" data-layer="1"><span class="num">04</span><span class="body"><span class="kind">Platform</span><strong>Magento 2 &amp; Hyvä</strong><span class="desc">Layout XML, ViewModels, Hyvä Checkout, compat modules</span></span><span class="arr" aria-hidden="true">→</span></li>
-          <li tabindex="0" data-layer="0"><span class="num">05</span><span class="body"><span class="kind">Performance</span><strong>Core Web Vitals in the green</strong><span class="desc">LCP under 1.5s, CLS under 0.05, measured in CrUX</span></span><span class="arr" aria-hidden="true">→</span></li>
+          <li tabindex="0" data-layer="4"><span class="num">01</span><span class="body"><span
+                class="kind">Markup</span><strong>Semantic HTML &amp; WCAG 2.2 AA</strong><span class="desc">Keyboard
+                and screen-reader tested on every template</span></span><span class="arr" aria-hidden="true">→</span>
+          </li>
+          <li tabindex="0" data-layer="3"><span class="num">02</span><span class="body"><span
+                class="kind">Styling</span><strong>Tailwind CSS &amp; design tokens</strong><span class="desc">One
+                tailwind.config.js shared by theme and Figma</span></span><span class="arr" aria-hidden="true">→</span>
+          </li>
+          <li tabindex="0" data-layer="2"><span class="num">03</span><span class="body"><span
+                class="kind">Behaviour</span><strong>Alpine.js &amp; Magewire</strong><span class="desc">Small
+                components, no RequireJS or Knockout</span></span><span class="arr" aria-hidden="true">→</span></li>
+          <li tabindex="0" data-layer="1"><span class="num">04</span><span class="body"><span
+                class="kind">Platform</span><strong>Magento 2 &amp; Hyvä</strong><span class="desc">Layout XML,
+                ViewModels, Hyvä Checkout, compat modules</span></span><span class="arr" aria-hidden="true">→</span>
+          </li>
+          <li tabindex="0" data-layer="0"><span class="num">05</span><span class="body"><span
+                class="kind">Performance</span><strong>Core Web Vitals in the green</strong><span class="desc">LCP under
+                1.5s, CLS under 0.05, measured in CrUX</span></span><span class="arr" aria-hidden="true">→</span></li>
         </ol>
         <p class="layers-note">Layer 01 is the forest floor. Layer 05 is the far ridge.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="process" aria-labelledby="process-title">
+  <section class="section hidden" id="process" aria-labelledby="process-title">
     <div class="wrap">
       <div class="section-head">
         <div>
@@ -212,10 +252,24 @@ description: Frontend developer building fast, accessible Magento 2 storefronts 
         <p>The same order on every project, so clients know what happens next and where their budget goes.</p>
       </div>
       <ol class="steps">
-        <li><span class="node">01</span><h3>Audit</h3><p>Lighthouse and CrUX baselines, a template inventory, and a list of third-party modules that still expect RequireJS.</p></li>
-        <li><span class="node">02</span><h3>Design tokens</h3><p>Colours, type and spacing move from Figma into tailwind.config.js, so the theme and the design file stay in step.</p></li>
-        <li><span class="node">03</span><h3>Build</h3><p>A Hyvä child theme, Alpine components and compatibility modules, reviewed in small pull requests.</p></li>
-        <li><span class="node">04</span><h3>Measure &amp; hand over</h3><p>Core Web Vitals tracked after launch, with a handover doc your in-house team can pick up straight away.</p></li>
+        <li><span class="node">01</span>
+          <h3>Audit</h3>
+          <p>Lighthouse and CrUX baselines, a template inventory, and a list of third-party modules that still expect
+            RequireJS.</p>
+        </li>
+        <li><span class="node">02</span>
+          <h3>Design tokens</h3>
+          <p>Colours, type and spacing move from Figma into tailwind.config.js, so the theme and the design file stay in
+            step.</p>
+        </li>
+        <li><span class="node">03</span>
+          <h3>Build</h3>
+          <p>A Hyvä child theme, Alpine components and compatibility modules, reviewed in small pull requests.</p>
+        </li>
+        <li><span class="node">04</span>
+          <h3>Measure &amp; hand over</h3>
+          <p>Core Web Vitals tracked after launch, with a handover doc your in-house team can pick up straight away.</p>
+        </li>
       </ol>
     </div>
   </section>
@@ -225,7 +279,8 @@ description: Frontend developer building fast, accessible Magento 2 storefronts 
       <div class="contact-copy">
         <p class="eyebrow">Get in touch</p>
         <h2 class="display" id="contact-title">Have a Magento store that should feel faster?</h2>
-        <p>Tell me what you're running, what's slow and what you'd like to change. I usually reply within two working days.</p>
+        <p>Tell me what you're running, what's slow and what you'd like to change. I usually reply within two working
+          days.</p>
         <div class="mailrow">
           <code id="email">hello@yourname.dev</code>
           <button class="btn btn-ghost" type="button" id="copyBtn">Copy email</button>
@@ -234,8 +289,10 @@ description: Frontend developer building fast, accessible Magento 2 storefronts 
       </div>
       <form class="panel" id="contactForm" novalidate="">
         <div class="two">
-          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required=""></div>
-          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required=""></div>
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name"
+              required=""></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email"
+              autocomplete="email" required=""></div>
         </div>
         <div class="field"><label for="f-type">Project type</label>
           <select id="f-type" name="type">
@@ -246,7 +303,8 @@ description: Frontend developer building fast, accessible Magento 2 storefronts 
             <option>Something else</option>
           </select>
         </div>
-        <div class="field"><label for="f-msg">What's the store, and what needs to change?</label><textarea id="f-msg" name="message" required=""></textarea></div>
+        <div class="field"><label for="f-msg">What's the store, and what needs to change?</label><textarea id="f-msg"
+            name="message" required=""></textarea></div>
         <button class="btn btn-primary magnetic" type="submit" style="justify-self:start">Send message</button>
         <p class="status" id="formStatus" aria-live="polite"></p>
       </form>

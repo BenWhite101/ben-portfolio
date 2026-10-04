@@ -1,0 +1,210 @@
+[
+  {
+    "name": "APUK",
+    "img": "apuk.jpg",
+    "url": "apukonline.com",
+    "c1": "#3f6b5a",
+    "c2": "#0f201b",
+    "meta": "2025 · Magento 2",
+    "summary": "CMS Page builds, header and footer redeveloped, accessiblity",
+    "metrics": [
+      { "value": "0.092", "label": "CLS, reduced to" }
+    ],
+    "tags": [
+      "Magento 2",
+      "eCommerce",
+      "CMS",
+      "SCSS",
+      "Figma"
+    ]
+  },
+  {
+    "name": "Bathshack",
+    "img": "bathshack.png",
+    "url": "bathshack.com",
+    "c1": "#2f6f8f",
+    "c2": "#0a1a26",
+    "meta": "2021 · Magento 2",
+    "summary": "Full Magento 2 site build, following on from their M1 site",
+    "tags": [
+      "Magento 2",
+      "eCommerce",
+      "Full site build",
+      "LESS",
+      "CMS"
+    ]
+  },
+  {
+    "name": "Farbgel",
+    "img": "farbgel.png",
+    "url": "farbgel.example",
+    "c1": "#b87a26",
+    "c2": "#2a1a08",
+    "meta": "2020 · Magento 2 Single Product Site",
+    "summary": "M1 to M2 update and redesign",
+    "tags": [
+      "Magento 2",
+      "eCommerce"
+    ]
+  },
+  {
+    "name": "Filming in England",
+    "img": "fie.png",
+    "url": "filminginengland.example",
+    "c1": "#7a4fd0",
+    "c2": "#1a1033",
+    "meta": "20XX · WordPress Build",
+    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "tags": [
+      "WordPress Build",
+      "CMS Content/Templating"
+    ]
+  },
+  {
+    "name": "Gray & Co",
+    "img": "gray.png",
+    "url": "grayandcosolicitors.co.uk",
+    "c1": "#5b6478",
+    "c2": "#141822",
+    "meta": "20XX · WordPress Build",
+    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "tags": [
+      "WordPress Build",
+      "CMS Content/Templating",
+      "Form setup + email"
+    ]
+  },
+  {
+    "name": "Heamar",
+    "img": "heamar.jpg",
+    "url": "heamar.co.uk",
+    "c1": "#a8443f",
+    "c2": "#240c0b",
+    "meta": "2024 · Magento 2",
+    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "tags": [
+      "Magento 2",
+      "Hyvä"
+    ]
+  },
+  {
+    "name": "Life Choice Legal",
+    "img": "lcl.jpg",
+    "url": "lifechoicelegal.co.uk",
+    "c1": "#3d5a9c",
+    "c2": "#0c1428",
+    "meta": "2019 · WordPress Site Build",
+    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "metrics": [
+      { "value": "36%", "label": "increased form submissions" }
+    ],
+    "tags": [
+      "Magento 2",
+      "Hyvä"
+    ]
+  },
+  {
+    "name": "McA Fitness",
+    "img": "mca.png",
+    "url": "mcafitness.co.uk",
+    "c1": "#c0563a",
+    "c2": "#2a0f08",
+    "meta": "2022 · WordPress Site Build",
+    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "tags": [
+      "Magento 2",
+      "Hyvä"
+    ]
+  },
+  {
+    "name": "Meteor Electrical",
+    "img": "meteor.jpg",
+    "url": "meteorelectrical.example",
+    "c1": "#2f7d6d",
+    "c2": "#09201b",
+    "meta": "2022 · Magento 2",
+    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "tags": [
+      "Magento 2",
+      "Hyvä"
+    ]
+  },
+  {
+    "name": "Rehome",
+    "img": "rehome.jpg",
+    "url": "rehome.example",
+    "c1": "#8a6a3a",
+    "c2": "#1f170a",
+    "meta": "2024 · Magento 2",
+    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "tags": [
+      "Magento 2",
+      "Hyvä"
+    ]
+  },
+  {
+    "name": "Warner Bros. UK",
+    "img": "warner.png",
+    "url": "warnerbros.example",
+    "c1": "#2c5fa8",
+    "c2": "#08142a",
+    "meta": "2020 · Magento 2",
+    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "tags": [
+      "Magento 2",
+      "Hyvä"
+    ]
+  },
+  {
+    "name": "Yuasa Batteries",
+    "img": "yuasa.jpg",
+    "url": "yuasa.example",
+    "c1": "#b0303a",
+    "c2": "#26080b",
+    "meta": "2025 · Magento 2",
+    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "tags": [
+      "Magento 2",
+      "Hyvä"
+    ]
+  },
+  {
+    "name": "Huws Gray",
+    "img": "huws.png",
+    "url": "huwsgray.example",
+    "c1": "#4b7a3a",
+    "c2": "#0f1d0a",
+    "meta": "2026 · Project type",
+    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "tags": [
+      "Magento 2",
+      "Hyvä"
+    ]
+  },
+  {
+    "name": "Bradfords",
+    "img": "bradfords.png",
+    "url": "bradfords.example",
+    "c1": "#6b4fa0",
+    "c2": "#150d26",
+    "meta": "20XX · Hyvä Conversion",
+    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "tags": [
+      "Magento 2",
+      "Hyvä"
+    ]
+  },
+  {
+    "name": "Marlena Portfolio",
+    "img": "marlena.png",
+    "url": "marlena.example",
+    "c1": "#a0507a",
+    "c2": "#240b19",
+    "meta": "2026 · Eleventy Build",
+    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "tags": [
+      "Portfolio",
+      "Eleventy"
+    ]
+  }
+]

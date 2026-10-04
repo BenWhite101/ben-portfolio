@@ -8,10 +8,19 @@
   navBtn.addEventListener('click', () => { const o = navLinks.classList.toggle('open'); navBtn.setAttribute('aria-expanded', String(o)); });
   navLinks.addEventListener('click', e => { if (e.target.closest('a')) { navLinks.classList.remove('open'); navBtn.setAttribute('aria-expanded', 'false'); } });
 
-  /* ---- live qty demo ---- */
-  let qty = 1; const qv = document.getElementById('qtyVal');
-  document.getElementById('qtyDec').addEventListener('click', () => { qty = Math.max(1, qty - 1); qv.textContent = qty; });
-  document.getElementById('qtyInc').addEventListener('click', () => { qty = Math.min(99, qty + 1); qv.textContent = qty; });
+  /* ---- hero code card: file tabs (arrow keys move between them) ---- */
+  const tabs = [...document.querySelectorAll('.hero-card [role="tab"]')];
+  const selectTab = t => tabs.forEach(x => {
+    const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1;
+    document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+  });
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => selectTab(t));
+    t.addEventListener('keydown', e => {
+      const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (!d) return;
+      const n = tabs[(i + d + tabs.length) % tabs.length]; selectTab(n); n.focus();
+    });
+  });
 
   /* ---- copy email ---- */
   const copyBtn = document.getElementById('copyBtn'), emailEl = document.getElementById('email');
@@ -45,6 +54,31 @@
       });
       c.addEventListener('pointerleave', () => { c.style.setProperty('--rx', '0deg'); c.style.setProperty('--ry', '0deg'); });
     });
+  }
+
+  /* ---- work: show the first four, "See more" reveals the rest ---- */
+  const moreBtn = document.getElementById('work-more');
+  if (moreBtn) {
+    const grid = document.querySelector('.work-grid');
+    grid.classList.add('is-collapsed'); moreBtn.hidden = false;
+    moreBtn.addEventListener('click', () => {
+      grid.classList.remove('is-collapsed'); grid.classList.add('is-revealing');
+      moreBtn.setAttribute('aria-expanded', 'true'); moreBtn.parentElement.hidden = true;
+      grid.querySelector('[data-extra]')?.querySelector('.m-shot')?.focus({ preventScroll: true });
+    });
+  }
+
+  /* ---- work screenshots: magnify into a scrollable lightbox ---- */
+  const lb = document.getElementById('lightbox');
+  if (lb) {
+    const lbImg = lb.querySelector('img'), lbTitle = lb.querySelector('.lb-title'), lbBody = lb.querySelector('.lb-body');
+    document.querySelectorAll('.zoom-btn').forEach(btn => btn.addEventListener('click', () => {
+      lbImg.src = btn.dataset.zoom; lbImg.alt = `Full-page screenshot of the ${btn.dataset.title} website`;
+      lbTitle.textContent = btn.dataset.title; lbBody.scrollTop = 0;
+      lb.showModal(); lbBody.focus();
+    }));
+    lb.querySelector('.lb-close').addEventListener('click', () => lb.close());
+    lb.addEventListener('click', e => { if (e.target === lb) lb.close(); }); // backdrop click
   }
 
   /* ---- helpers ---- */
