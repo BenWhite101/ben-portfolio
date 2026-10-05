@@ -1141,6 +1141,30 @@ pre.code {
   color: var(--soft);
   font-size: 0.98rem;
 }
+.points {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--soft);
+  font-size: 0.94rem;
+}
+.points li {
+  position: relative;
+  padding-left: 18px;
+}
+/* small accent dash in place of a bullet */
+.points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 8px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--amber);
+}
 .metrics {
   display: flex;
   flex-wrap: wrap;
@@ -1213,6 +1237,185 @@ pre.code {
   font: 500 0.75rem var(--f-mono);
   color: var(--muted);
   margin-left: 4px;
+}
+
+/* ---------- about ---------- */
+.about {
+  padding-top: 0;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(36px, 6vw, 80px);
+  align-items: start;
+}
+.about-side {
+  display: grid;
+  gap: 20px;
+  max-width: 340px;
+}
+/* same gradient ring as the hero avatar, squared off to match the cards */
+.about-photo {
+  padding: 3px;
+  border-radius: 22px;
+  background: linear-gradient(140deg, var(--amber), var(--mist));
+  box-shadow: 0 30px 60px -30px rgba(var(--acc-rgb), 0.45);
+}
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: 50% 35%;
+  border-radius: 19px;
+  border: 2px solid var(--ink);
+}
+.about-facts {
+  display: grid;
+  margin: 0;
+  padding: 6px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.about-facts div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 0;
+}
+.about-facts div + div {
+  border-top: 1px solid var(--line);
+}
+.about-facts dt {
+  font: 500 0.7rem/1.6 var(--f-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.about-facts dd {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--moon);
+  text-align: right;
+}
+@media (max-width: 920px) {
+  .about-side {
+    max-width: none;
+  }
+  .about-photo {
+    width: min(100%, 220px);
+  }
+}
+.about-copy h2 {
+  margin: 18px 0 22px;
+}
+.about-copy > p:not(.eyebrow) {
+  color: var(--soft);
+  max-width: 34em;
+}
+.about-copy > p + p:not(.eyebrow) {
+  margin-top: 0.9em;
+}
+/* "how I work": quieter cousins of the stack layers */
+.about-how {
+  display: grid;
+  gap: 10px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.about-how li {
+  display: grid;
+  gap: 4px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.about-how .kind {
+  font: 500 0.66rem var(--f-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.about-how strong {
+  font: var(--dw4) calc(1.08rem * var(--dscale))/1.3 var(--f-display);
+  font-variation-settings: var(--dwdth);
+  letter-spacing: 0.01em;
+  color: var(--moon);
+}
+.about-how .desc {
+  font-size: 0.88rem;
+  color: var(--soft);
+}
+
+/* ---------- skills ---------- */
+.skills {
+  padding-top: 0;
+}
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: clamp(24px, 3vw, 40px);
+}
+.skill-group h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  font: 500 0.76rem/1.4 var(--f-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+/* group swatch: a small glowing light in the group's hue */
+.skill-group h3::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--c1);
+  box-shadow: 0 0 10px 2px color-mix(in srgb, var(--c1) 45%, transparent);
+}
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* glass pills tinted by the group hue, lit from the top-left like the project cards */
+.skill-pills li {
+  font: 500 0.78rem var(--f-mono);
+  color: color-mix(in srgb, var(--c1) 30%, var(--moon));
+  background: radial-gradient(
+    120% 160% at 20% 0%,
+    color-mix(in srgb, var(--c1) 22%, var(--ink-2)),
+    color-mix(in srgb, var(--c1) 6%, var(--ink-2))
+  );
+  border: 1px solid color-mix(in srgb, var(--c1) 32%, transparent);
+  border-radius: 999px;
+  padding: 6px 13px;
+  transition: border-color 0.2s;
+}
+.skill-pills li:hover {
+  border-color: color-mix(in srgb, var(--c1) 70%, transparent);
+}
+/* in progress: outlined + dashed rather than filled */
+.is-learning .skill-pills li {
+  color: color-mix(in srgb, var(--c1) 70%, var(--moon));
+  background: color-mix(in srgb, var(--c1) 6%, transparent);
+  border: 1px dashed color-mix(in srgb, var(--c1) 60%, transparent);
+}
+.is-learning .skill-pills li:hover {
+  border-color: var(--c1);
 }
 
 /* screenshot cards: the window sits flush at the bottom and its page scrolls */
@@ -1562,6 +1765,9 @@ html:has(.lightbox[open]) {
   color: var(--soft);
   max-width: 28em;
 }
+.contact-copy > p + p {
+  margin-top: 0.9em;
+}
 .mailrow {
   display: flex;
   flex-wrap: wrap;
@@ -1647,6 +1853,11 @@ form.panel {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+/* spam honeypot for Netlify Forms: hidden from people, visible to bots */
+.hp {
+  position: absolute;
+  left: -9999px;
 }
 .status {
   font: 400 0.85rem var(--f-mono);
@@ -1862,6 +2073,7 @@ footer a:hover {
   .hero-grid,
   .forest-inner,
   .contact-grid,
+  .about-grid,
   .section-head {
     grid-template-columns: minmax(0, 1fr);
   }

@@ -30,14 +30,18 @@
     try { navigator.clipboard.writeText(emailEl.textContent.trim()).then(done, fallback); } catch (e) { fallback(); }
   });
 
-  /* ---- form (template: wire to your form service) ---- */
+  /* ---- contact form: posts to Netlify Forms ---- */
   const form = document.getElementById('contactForm'), status = document.getElementById('formStatus');
   form.addEventListener('submit', e => {
     e.preventDefault();
     const missing = [...form.querySelectorAll('[required]')].find(el => !el.value.trim() || (el.type === 'email' && !/^\S+@\S+\.\S+$/.test(el.value)));
     if (missing) { status.style.color = 'var(--amber)'; status.textContent = 'Add your ' + missing.name + ' so I can reply.'; missing.focus(); return; }
-    status.style.color = ''; status.textContent = 'Thanks, your message is ready. Connect this form to your email service to send it.';
-    form.reset();
+    const btn = form.querySelector('[type=submit]');
+    btn.disabled = true; status.style.color = ''; status.textContent = 'Sending…';
+    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(new FormData(form)).toString() })
+      .then(r => { if (!r.ok) throw r; status.textContent = "Thanks, your message is on its way. I'll be in touch soon."; form.reset(); })
+      .catch(() => { status.style.color = 'var(--amber)'; status.textContent = "Sorry, that didn't send. Please email me directly instead."; })
+      .finally(() => { btn.disabled = false; });
   });
 
   /* ---- magnetic buttons + card tilt ---- */
@@ -499,7 +503,7 @@
   tp.querySelectorAll('[data-palette]').forEach(b => b.addEventListener('click', () => setPalette(b.dataset.palette)));
   tpToggle.addEventListener('click', () => { const min = tp.classList.toggle('min'); tpToggle.textContent = min ? 'Show' : 'Hide'; tpToggle.setAttribute('aria-expanded', String(!min)); });
   setType(recall('typePreview'));
-  setPalette(recall('palettePreview'), false);
+  setPalette(recall('palettePreview') || 'northern', false);
 
   resizeAll();
 })();

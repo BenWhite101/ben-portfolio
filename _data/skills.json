@@ -1,0 +1,28 @@
+[
+  {
+    "group": "Platforms",
+    "c1": "#9d8cff",
+    "items": ["Magento 2", "Hyvä Themes", "Hyvä Checkout", "WordPress", "Eleventy"]
+  },
+  {
+    "group": "Frontend",
+    "c1": "#6ee7b7",
+    "items": ["HTML", "CSS", "SCSS", "LESS", "Tailwind CSS", "JavaScript", "Alpine.js", "Layout XML", "Node"]
+  },
+  {
+    "group": "Email",
+    "c1": "#b0303a",
+    "items": ["HTML Email", "Transactional Emails", "Email Templating", "Form Setup / Design", "Magento 2 Marketing Emails"]
+  },
+  {
+    "group": "Quality & Design",
+    "c1": "#67c6ee",
+    "items": ["Accessibility (WCAG 2.2)", "Core Web Vitals", "Performance", "Figma", "CMS Templating", "UI / UX Principles"]
+  },
+  {
+    "group": "Currently learning",
+    "c1": "#f4a062",
+    "learning": true,
+    "items": ["React", "TypeScript", "Next.js"]
+  }
+]

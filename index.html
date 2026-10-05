@@ -174,6 +174,13 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
             <p class="meta">{{ p.meta }}</p>
             <h3>{{ p.name }}</h3>
             <p>{{ p.summary }}</p>
+            {%- if p.points %}
+            <ul class="points">
+              {%- for pt in p.points %}
+              <li>{{ pt }}</li>
+              {%- endfor %}
+            </ul>
+            {%- endif %}
             {%- if p.metrics %}
             <div class="metrics">
               {%- for m in p.metrics %}
@@ -181,7 +188,7 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
               {%- endfor %}
             </div>
             {%- endif %}
-            <div class="tags">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}<a href="{{ p.link | default: '#' }}">Case study →</a></div>
+            <div class="tags">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}{% if p.link %}<a href="{{ p.link }}">Case study →</a>{% endif %}</div>
           </div>
         </article>
         {%- endfor %}
@@ -204,6 +211,63 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
           <img alt="">
         </div>
       </dialog>
+    </div>
+  </section>
+
+  <section class="section about" id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <div class="about-side">
+        <div class="about-photo">
+          <img src="/assets/img/me.jpg" alt="Photo of Ben" width="306" height="306" loading="lazy" decoding="async">
+        </div>
+        <dl class="about-facts">
+          <div><dt>Based in</dt><dd>Greater Manchester, UK</dd></div>
+          <div><dt>Experience</dt><dd>8+ years</dd></div>
+          <div><dt>Focus</dt><dd>Magento 2, Hyvä &amp; WordPress</dd></div>
+          <div><dt>Open to</dt><dd>Freelance projects &amp; roles</dd></div>
+        </dl>
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">About me</p>
+        <h2 class="display" id="about-title">The developer behind the builds.</h2>
+        <p>I'm a frontend developer based in Greater Manchester, and I've been building websites and frontends for over
+          eight years. I first got into web development through modules at university, kept going with side projects in
+          my own time, and it stuck.</p>
+        <p>Most of my work today is Magento 2 and Hyvä storefronts, alongside WordPress builds and email templates. My
+          favourite part is the moment a design becomes something real: fast, accessible and right down to the
+          details.</p>
+        <ul class="about-how" aria-label="How I work">
+          <li><span class="kind">Design</span><strong>Faithful to the design</strong><span class="desc">Built closely
+              to Figma, down to the spacing and states</span></li>
+          <li><span class="kind">Team</span><strong>Close to the backend</strong><span class="desc">Working alongside
+              backend developers on custom features, like Yuasa's battery lookup</span></li>
+          <li><span class="kind">Quality</span><strong>Accessible and fast by default</strong><span class="desc">Checked
+              as I build, not bolted on at the end</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section skills" id="skills" aria-labelledby="skills-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Skills &amp; tools</p>
+          <h2 class="display" id="skills-title">What I bring to a build.</h2>
+        </div>
+      </div>
+      <div class="skill-groups">
+        {%- for g in skills %}
+        <div class="skill-group{% if g.learning %} is-learning{% endif %}" style="--c1:{{ g.c1 }}">
+          <h3>{{ g.group }}</h3>
+          <ul class="skill-pills">
+            {%- for s in g.items %}
+            <li>{{ s }}</li>
+            {%- endfor %}
+          </ul>
+        </div>
+        {%- endfor %}
+      </div>
     </div>
   </section>
 
@@ -278,32 +342,37 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
     <div class="wrap contact-grid">
       <div class="contact-copy">
         <p class="eyebrow">Get in touch</p>
-        <h2 class="display" id="contact-title">Have a Magento store that should feel faster?</h2>
-        <p>Tell me what you're running, what's slow and what you'd like to change. I usually reply within two working
-          days.</p>
+        <h2 class="display" id="contact-title">Let's build something together.</h2>
+        <p>Whether you have a project in mind, need an extra pair of hands on your team or have a role to talk about,
+          I'd love to hear from you.</p>
+        <p>Send a message using the form, or drop me an email.</p>
         <div class="mailrow">
-          <code id="email">hello@yourname.dev</code>
+          <code id="email">ben.p.white101@hotmail.com</code>
           <button class="btn btn-ghost" type="button" id="copyBtn">Copy email</button>
         </div>
         <div class="links"><a href="#">GitHub</a><a href="#">LinkedIn</a><a href="#">Download CV</a></div>
       </div>
-      <form class="panel" id="contactForm" novalidate="">
+      <form class="panel" id="contactForm" name="contact" method="POST" action="/" data-netlify="true"
+        netlify-honeypot="company" novalidate="">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hp" aria-hidden="true"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
         <div class="two">
           <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name"
               required=""></div>
           <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email"
               autocomplete="email" required=""></div>
         </div>
-        <div class="field"><label for="f-type">Project type</label>
+        <div class="field"><label for="f-type">What's it about?</label>
           <select id="f-type" name="type">
-            <option>New Hyvä theme</option>
-            <option>Luma → Hyvä migration</option>
-            <option>Components or checkout work</option>
-            <option>Transactional emails</option>
+            <option>A website or store project</option>
+            <option>Magento 2 / Hyvä work</option>
+            <option>WordPress build</option>
+            <option>Email templates</option>
+            <option>A job or contract role</option>
             <option>Something else</option>
           </select>
         </div>
-        <div class="field"><label for="f-msg">What's the store, and what needs to change?</label><textarea id="f-msg"
+        <div class="field"><label for="f-msg">Tell me a bit about it</label><textarea id="f-msg"
             name="message" required=""></textarea></div>
         <button class="btn btn-primary magnetic" type="submit" style="justify-self:start">Send message</button>
         <p class="status" id="formStatus" aria-live="polite"></p>

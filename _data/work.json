@@ -6,7 +6,12 @@
     "c1": "#3f6b5a",
     "c2": "#0f201b",
     "meta": "2025 · Magento 2",
-    "summary": "CMS Page builds, header and footer redeveloped, accessiblity",
+    "summary": "Frontend improvements across the APUK Magento 2 store.",
+    "points": [
+      "Redeveloped the site header and footer",
+      "Built new CMS pages",
+      "Improved accessibility across the site"
+    ],
     "metrics": [
       { "value": "0.092", "label": "CLS, reduced to" }
     ],
@@ -19,21 +24,74 @@
     ]
   },
   {
+    "name": "Yuasa Batteries",
+    "img": "yuasa.jpg",
+    "url": "yuasa.example",
+    "c1": "#b0303a",
+    "c2": "#26080b",
+    "meta": "2025 · Magento 2",
+    "summary": "Built the Magento 2 site and theme end to end.",
+    "points": [
+      "Developed the full custom theme",
+      "Worked closely with the backend team on a bespoke battery lookup module"
+    ],
+    "tags": [
+      "Magento 2",
+      "Hyvä"
+    ]
+  },
+    {
+    "name": "Rehome",
+    "img": "rehome.jpg",
+    "url": "rehome.example",
+    "c1": "#8a6a3a",
+    "c2": "#1f170a",
+    "meta": "2024 · Magento 2",
+    "summary": "Brought the rebrand from Used Kitchen Exchange to Rehome to life in Magento 2, building the new designs for:",
+    "points": [
+      "Home and CMS pages",
+      "Product listing (PLP) and product (PDP) pages",
+      "Checkout"
+    ],
+    "tags": [
+      "Magento 2",
+      "Hyvä"
+    ]
+  },
+   {
+    "name": "Warner Bros. UK",
+    "img": "warner.png",
+    "url": "warnerbros.example",
+    "c1": "#2c5fa8",
+    "c2": "#08142a",
+    "meta": "2020 · Magento 2",
+    "summary": "Frontend theming and ongoing site maintenance.",
+    "points": [
+      "Created templates from CMS pages through to checkout",
+      "Built and populated the mega menu, matched closely to Figma designs"
+    ],
+    "tags": [
+      "Magento 2",
+      "Hyvä"
+    ]
+  },
+  {
     "name": "Bathshack",
     "img": "bathshack.png",
     "url": "bathshack.com",
     "c1": "#2f6f8f",
     "c2": "#0a1a26",
     "meta": "2021 · Magento 2",
-    "summary": "Full Magento 2 site build, following on from their M1 site",
+    "summary": "A full Magento 2 build, replacing their previous Magento 1 store.",
     "tags": [
       "Magento 2",
       "eCommerce",
-      "Full site build",
+      "Full theme build",
       "LESS",
       "CMS"
     ]
   },
+
   {
     "name": "Farbgel",
     "img": "farbgel.png",
@@ -41,7 +99,7 @@
     "c1": "#b87a26",
     "c2": "#2a1a08",
     "meta": "2020 · Magento 2 Single Product Site",
-    "summary": "M1 to M2 update and redesign",
+    "summary": "Moved the store from Magento 1 to Magento 2, alongside a redesign.",
     "tags": [
       "Magento 2",
       "eCommerce"
@@ -57,7 +115,8 @@
     "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
     "tags": [
       "WordPress Build",
-      "CMS Content/Templating"
+      "CMS Content/Templating",
+      "SVG"
     ]
   },
   {
@@ -84,7 +143,8 @@
     "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
     "tags": [
       "Magento 2",
-      "Hyvä"
+      "eCommerce",
+      "SCSS"
     ]
   },
   {
@@ -129,45 +189,9 @@
       "Hyvä"
     ]
   },
-  {
-    "name": "Rehome",
-    "img": "rehome.jpg",
-    "url": "rehome.example",
-    "c1": "#8a6a3a",
-    "c2": "#1f170a",
-    "meta": "2024 · Magento 2",
-    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
-    "tags": [
-      "Magento 2",
-      "Hyvä"
-    ]
-  },
-  {
-    "name": "Warner Bros. UK",
-    "img": "warner.png",
-    "url": "warnerbros.example",
-    "c1": "#2c5fa8",
-    "c2": "#08142a",
-    "meta": "2020 · Magento 2",
-    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
-    "tags": [
-      "Magento 2",
-      "Hyvä"
-    ]
-  },
-  {
-    "name": "Yuasa Batteries",
-    "img": "yuasa.jpg",
-    "url": "yuasa.example",
-    "c1": "#b0303a",
-    "c2": "#26080b",
-    "meta": "2025 · Magento 2",
-    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
-    "tags": [
-      "Magento 2",
-      "Hyvä"
-    ]
-  },
+  
+ 
+  
   {
     "name": "Huws Gray",
     "img": "huws.png",
