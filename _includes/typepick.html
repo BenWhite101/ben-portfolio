@@ -1,17 +1,6 @@
-<!-- Temporary: remove once a typeface and palette are chosen (and the "design preview" block in main.js) -->
-<div class="typepick" id="typepick" role="region" aria-label="Design preview">
-  <div class="tp-head"><b>Design preview</b><button type="button" class="tp-toggle" id="tpToggle" aria-expanded="true">Hide</button></div>
-  <div class="tp-row" role="group" aria-label="Typeface">
-    <span>Typeface</span>
-    <button type="button" class="opt" data-type="" aria-pressed="true" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600">Bricolage</button>
-    <button type="button" class="opt" data-type="syne" aria-pressed="false" style="font-family:Syne,sans-serif;font-weight:700">Syne</button>
-    <button type="button" class="opt" data-type="serif" aria-pressed="false" style="font-family:'Instrument Serif',serif;font-size:1.05rem">Instrument Serif</button>
-    <button type="button" class="opt" data-type="unbounded" aria-pressed="false" style="font-family:Unbounded,sans-serif;font-size:.8rem">Unbounded</button>
-    <button type="button" class="opt" data-type="cormorant" aria-pressed="false" style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.05rem">Cormorant</button>
-    <button type="button" class="opt" data-type="outfit" aria-pressed="false" style="font-family:Outfit,sans-serif;font-weight:600">Outfit</button>
-    <button type="button" class="opt" data-type="archivo" aria-pressed="false" style="font-family:Archivo,sans-serif;font-weight:800;font-variation-settings:'wdth' 116;font-size:.84rem">Archivo</button>
-    <button type="button" class="opt" data-type="rubik" aria-pressed="false" style="font-family:Rubik,sans-serif;font-weight:800">Rubik</button>
-  </div>
+<!-- Design preview: hidden by default, press B to toggle (see the "design preview" block in main.js) -->
+<div class="typepick" id="typepick" role="region" aria-label="Design preview" hidden>
+  <div class="tp-head"><b>Design preview</b><button type="button" class="tp-toggle" id="tpToggle" aria-label="Close design preview">Close</button></div>
   <div class="tp-row" role="group" aria-label="Colour palette">
     <span>Palette</span>
     <button type="button" class="opt" data-palette="night" aria-pressed="false"><i class="sw" style="background:linear-gradient(135deg,#26375f,#f6c86e)"></i>Night</button>

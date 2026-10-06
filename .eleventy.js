@@ -24,6 +24,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets/js")
   eleventyConfig.addPassthroughCopy("assets/img")
   eleventyConfig.addPassthroughCopy("assets/fonts")
+  eleventyConfig.addPassthroughCopy("assets/cv")
   // Favicons live at the site root (/favicon.ico etc.), where browsers and the manifest expect them.
   eleventyConfig.addPassthroughCopy({ "assets/favicon": "/" })
 

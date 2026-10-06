@@ -6,13 +6,14 @@ description: Frontend developer building fast, accessible Magento 2 storefronts 
 
 <!-- EDIT: every line of copy, the name, projects and figures below are template content. -->
 <header class="hero" id="top">
+  <canvas id="heroStars" aria-hidden="true"></canvas>
   <canvas id="aurora" aria-hidden="true" width="466" height="192"></canvas>
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <div class="hero-id">
         <span class="avatar"><img src="/assets/img/me.jpg" alt="Photo of Ben" width="64" height="64"><span class="avail"
             aria-hidden="true"></span></span>
-        <p class="eyebrow">Frontend developer · Open to projects</p>
+        <p class="eyebrow">Frontend developer · Open to new roles</p>
       </div>
       <h1 class="display"><span class="w">Hello</span> <span class="w" style="animation-delay:.08s">There!</span><br>
         <span class="w" style="animation-delay:.16s">I'm</span> <em style="animation-delay:.24s">Ben</em></h1>
@@ -21,16 +22,16 @@ description: Frontend developer building fast, accessible Magento 2 storefronts 
         needs.</p>
       <div class="cta-row">
         <a class="btn btn-primary magnetic" href="#work">See my work</a>
+        <a class="btn btn-ghost magnetic" href="/assets/cv/ben-white-cv.pdf" download="Ben White - 2026 CV.pdf"><svg class="dl-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8m-3.5-3.5L8 10l3.5-3.5M3 13h10"/></svg>Download CV</a>
         <a class="btn btn-ghost magnetic" href="#contact">Let's build something →</a>
       </div>
       <div class="facts">
         <span><b>8+</b> years building for the web</span>
-        <span><b>15+</b> live sites shipped</span>
-        <span><b>100</b> accessibility, as standard</span>
+        <span><b>20+</b> live sites shipped</span>
       </div>
     </div>
 
-    <aside class="hero-card" aria-label="A peek at how I build">
+    <aside class="hero-card hidden-mob" aria-label="A peek at how I build">
       <div class="card-top">
         <div class="tabs" role="tablist" aria-label="Source files">
           <button type="button" role="tab" id="tab-about" aria-controls="pane-about" aria-selected="true">about.js</button>
@@ -112,11 +113,15 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
 </header>
 
 <div class="marquee" aria-label="Tools I work with">
+  <p class="eyebrow marquee-title">At a glance</p>
   <ul>
     <li>Magento 2</li>
     <li>Hyvä Themes</li>
     <li>Hyvä Checkout</li>
+    <li>Wordpress</li>
+    <li>Eleventy</li>
     <li>Tailwind CSS</li>
+    <li>SCSS/LESS</li>
     <li>Alpine.js</li>
     <li>Layout XML</li>
     <li>Figma</li>
@@ -125,13 +130,17 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
     <li aria-hidden="true">Magento 2</li>
     <li aria-hidden="true">Hyvä Themes</li>
     <li aria-hidden="true">Hyvä Checkout</li>
+    <li aria-hidden="true">Wordpress</li>
+    <li aria-hidden="true">Eleventy</li>
     <li aria-hidden="true">Tailwind CSS</li>
+    <li aria-hidden="true">SCSS/LESS</li>
     <li aria-hidden="true">Alpine.js</li>
     <li aria-hidden="true">Layout XML</li>
     <li aria-hidden="true">Figma</li>
     <li aria-hidden="true">WCAG 2.2</li>
     <li aria-hidden="true">Core Web Vitals</li>
   </ul>
+  <a class="marquee-more" href="#skills">Scroll down for the full skill set ↓</a>
 </div>
 
 <main>
@@ -148,7 +157,7 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
       <div class="section-head">
         <div>
           <p class="eyebrow">Selected work · 2018–2026</p>
-          <h2 class="display" id="work-title">What I've worked on.</h2>
+          <h2 class="display" id="work-title">Projects I've worked on.</h2>
         </div>
         <!-- <p>A mix of full Hyvä builds, Luma migrations and the smaller pieces that make trade buying easier. Each one was
           measured before and after launch.</p> -->
@@ -287,21 +296,21 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
                 and screen-reader tested on every template</span></span><span class="arr" aria-hidden="true">→</span>
           </li>
           <li tabindex="0" data-layer="3"><span class="num">02</span><span class="body"><span
-                class="kind">Styling</span><strong>Tailwind CSS &amp; design tokens</strong><span class="desc">One
+                class="kind">Styling</span><strong>Tailwind CSS || SCSS/LESS</strong><span class="desc">One
                 tailwind.config.js shared by theme and Figma</span></span><span class="arr" aria-hidden="true">→</span>
           </li>
           <li tabindex="0" data-layer="2"><span class="num">03</span><span class="body"><span
-                class="kind">Behaviour</span><strong>Alpine.js &amp; Magewire</strong><span class="desc">Small
+                class="kind">Behaviour</span><strong>JS &amp; Alpine.js</strong><span class="desc">Small
                 components, no RequireJS or Knockout</span></span><span class="arr" aria-hidden="true">→</span></li>
           <li tabindex="0" data-layer="1"><span class="num">04</span><span class="body"><span
-                class="kind">Platform</span><strong>Magento 2 &amp; Hyvä</strong><span class="desc">Layout XML,
+                class="kind">Platform</span><strong>Magento 2 &amp; Hyvä || Wordpress</strong><span class="desc">Layout XML,
                 ViewModels, Hyvä Checkout, compat modules</span></span><span class="arr" aria-hidden="true">→</span>
           </li>
           <li tabindex="0" data-layer="0"><span class="num">05</span><span class="body"><span
-                class="kind">Performance</span><strong>Core Web Vitals in the green</strong><span class="desc">LCP under
+                class="kind">Performance</span><strong>Core Web Vitals</strong><span class="desc">LCP under
                 1.5s, CLS under 0.05, measured in CrUX</span></span><span class="arr" aria-hidden="true">→</span></li>
         </ol>
-        <p class="layers-note">Layer 01 is the forest floor. Layer 05 is the far ridge.</p>
+        <p class="layers-note hidden">Layer 01 is the forest floor. Layer 05 is the far ridge.</p>
       </div>
     </div>
   </section>
@@ -350,7 +359,7 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
           <code id="email">ben.p.white101@hotmail.com</code>
           <button class="btn btn-ghost" type="button" id="copyBtn">Copy email</button>
         </div>
-        <div class="links"><a href="#">GitHub</a><a href="#">LinkedIn</a><a href="#">Download CV</a></div>
+        <div class="links"><a href="https://www.linkedin.com/in/ben-white-795001121/" target="_blank">LinkedIn</a><a href="#">Download CV</a></div>
       </div>
       <form class="panel" id="contactForm" name="contact" method="POST" action="/" data-netlify="true"
         netlify-honeypot="company" novalidate="">
@@ -364,11 +373,11 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
         </div>
         <div class="field"><label for="f-type">What's it about?</label>
           <select id="f-type" name="type">
+            <option>A job or contract role</option>
             <option>A website or store project</option>
             <option>Magento 2 / Hyvä work</option>
             <option>WordPress build</option>
             <option>Email templates</option>
-            <option>A job or contract role</option>
             <option>Something else</option>
           </select>
         </div>

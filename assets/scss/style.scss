@@ -68,7 +68,7 @@ img {
   --f-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --gutter: clamp(16px, 4vw, 48px);
   --maxw: 1200px;
-  /* display-face tuning, swapped per typeface option */
+  /* display-face tuning */
   --dw: 700;
   --dw3: 650;
   --dw4: 600; /* weights: headings, card titles, list titles */
@@ -77,73 +77,6 @@ img {
   --dscale: 1; /* size multiplier for wider/narrower faces */
   color-scheme: dark;
 }
-:root[data-type="syne"] {
-  --f-display: "Syne", "Avenir Next", system-ui, sans-serif;
-  --dw: 700;
-  --dw3: 700;
-  --dw4: 600;
-  --dls: 0.005em;
-  --dscale: 0.86;
-}
-:root[data-type="serif"] {
-  --f-display: "Instrument Serif", Georgia, "Times New Roman", serif;
-  --dw: 400;
-  --dw3: 400;
-  --dw4: 400;
-  --dls: 0.005em;
-  --dscale: 1.12;
-}
-:root[data-type="unbounded"] {
-  --f-display: "Unbounded", "Avenir Next", system-ui, sans-serif;
-  --dw: 600;
-  --dw3: 500;
-  --dw4: 500;
-  --dls: 0em;
-  --dscale: 0.74;
-}
-:root[data-type="cormorant"] {
-  --f-display: "Cormorant Garamond", Garamond, Georgia, serif;
-  --dw: 600;
-  --dw3: 600;
-  --dw4: 600;
-  --dls: 0.01em;
-  --dscale: 1.1;
-}
-:root[data-type="archivo"] {
-  --f-display: "Archivo", "Arial Black", system-ui, sans-serif;
-  --dw: 800;
-  --dw3: 800;
-  --dw4: 700;
-  --dls: 0.01em;
-  --dwdth: "wdth" 116;
-  --dscale: 0.84;
-}
-:root[data-type="rubik"] {
-  --f-display: "Rubik", "Arial Rounded MT Bold", system-ui, sans-serif;
-  --dw: 800;
-  --dw3: 700;
-  --dw4: 600;
-  --dls: 0.006em;
-  --dscale: 0.94;
-}
-:root[data-type="outfit"] {
-  --f-display: "Outfit", "Avenir Next", system-ui, sans-serif;
-  --dw: 600;
-  --dw3: 600;
-  --dw4: 500;
-  --dls: 0.004em;
-  --dscale: 0.98;
-}
-:root[data-type="serif"] .hero h1 em,
-:root[data-type="cormorant"] .hero h1 em {
-  font-style: italic;
-  padding-right: 0.08em;
-}
-:root[data-type="serif"] .forest-head .glow,
-:root[data-type="cormorant"] .forest-head .glow {
-  font-style: italic;
-}
-
 /* Dusk: plum sky, a low orange sun */
 :root[data-palette="dusk"] {
   --ink: #170d1d;
@@ -376,6 +309,27 @@ p {
 .nav-links .nav-cta:hover {
   color: var(--on-acc);
 }
+.nav-links .nav-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+/* small download arrow used on CV links */
+.dl-icon {
+  width: 1em;
+  height: 1em;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.2s ease;
+}
+a:hover > .dl-icon,
+a:focus-visible > .dl-icon {
+  transform: translateY(2px);
+}
 .nav-toggle {
   display: none;
   background: none;
@@ -385,7 +339,60 @@ p {
   width: 42px;
   height: 42px;
   cursor: pointer;
-  font: 500 0.8rem var(--f-mono);
+  transition: border-color 0.2s;
+}
+.nav-toggle:hover,
+.nav-toggle[aria-expanded="true"] {
+  border-color: rgba(var(--acc-rgb), 0.5);
+}
+/* burger -> cross: outer bars slide to the middle, then rotate (and the reverse on close) */
+.burger {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 12px;
+  margin: auto;
+}
+.burger i {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition:
+    top 0.18s ease 0.18s,
+    transform 0.18s ease,
+    opacity 0.1s ease 0.18s;
+}
+.burger i:nth-child(1) {
+  top: 0;
+}
+.burger i:nth-child(2) {
+  top: 5px;
+}
+.burger i:nth-child(3) {
+  top: 10px;
+}
+[aria-expanded="true"] .burger i {
+  background: var(--amber);
+  transition:
+    top 0.18s ease,
+    transform 0.22s cubic-bezier(0.3, 1.5, 0.6, 1) 0.18s,
+    opacity 0.1s ease;
+}
+[aria-expanded="true"] .burger i:nth-child(1) {
+  top: 5px;
+  transform: rotate(45deg);
+}
+[aria-expanded="true"] .burger i:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+  transition-delay: 0s;
+}
+[aria-expanded="true"] .burger i:nth-child(3) {
+  top: 5px;
+  transform: rotate(-45deg);
 }
 
 /* ---------- hero ---------- */
@@ -405,6 +412,16 @@ p {
   opacity: 0.85;
   -webkit-mask-image: linear-gradient(#000 55%, transparent);
   mask-image: linear-gradient(#000 55%, transparent);
+}
+/* sparse twinkling stars behind the aurora glow (drawn in main.js) */
+#heroStars {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  -webkit-mask-image: linear-gradient(#000 40%, transparent 85%);
+  mask-image: linear-gradient(#000 40%, transparent 85%);
 }
 .hero-grid {
   display: grid;
@@ -801,6 +818,56 @@ pre.code {
   border-radius: 50%;
   background: var(--amber);
   box-shadow: 0 0 10px 2px rgba(var(--acc-rgb), 0.5);
+}
+/* title and skills link only appear in the mobile pill layout */
+.marquee-title,
+.marquee-more {
+  display: none;
+}
+/* on phones nobody waits for the scroll: show every tool at once as wrapping pills */
+@media (max-width: 720px) {
+  .marquee-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+    color: var(--amber);
+  }
+  .marquee-more {
+    display: block;
+    width: fit-content;
+    margin: 14px auto 0;
+    padding: 4px 6px;
+    font: 500 0.78rem var(--f-mono);
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .marquee-more:hover,
+  .marquee-more:focus-visible {
+    color: var(--amber);
+  }
+  .marquee {
+    padding: 18px var(--gutter);
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .marquee ul {
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    animation: none;
+  }
+  .marquee li {
+    font-size: calc(0.92rem * var(--dscale));
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(var(--surf-rgb), 0.35);
+  }
+  .marquee li::after,
+  .marquee li[aria-hidden="true"] {
+    display: none;
+  }
 }
 
 /* ---------- sections ---------- */
@@ -1651,6 +1718,7 @@ html:has(.lightbox[open]) {
 .layers .desc {
   font-size: 0.88rem;
   color: var(--soft);
+  display: none;
 }
 .layers .arr {
   color: var(--muted);
@@ -1886,7 +1954,7 @@ footer a:hover {
 }
 
 /* ---------- motion ---------- */
-/* ---------- typeface preview switcher (temporary) ---------- */
+/* ---------- design preview: palette switcher, toggled with the B key ---------- */
 .typepick {
   position: fixed;
   right: 16px;
@@ -1935,9 +2003,6 @@ footer a:hover {
   text-transform: uppercase;
   color: var(--muted);
   width: 64px;
-}
-.typepick.min .tp-row {
-  display: none;
 }
 .typepick button.opt {
   border: 1px solid var(--line);
@@ -2070,6 +2135,9 @@ footer a:hover {
 
 /* ---------- responsive ---------- */
 @media (max-width: 920px) {
+  .hidden-mob {
+    display: none !important;
+  }
   .hero-grid,
   .forest-inner,
   .contact-grid,
@@ -2120,12 +2188,41 @@ footer a:hover {
     align-items: stretch;
     gap: 0;
     padding: 8px var(--gutter) 18px;
-    background: rgba(var(--ink-rgb), 0.96);
+    background: var(--ink);
     border-bottom: 1px solid var(--line);
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0s 0.25s;
   }
   .nav-links.open {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease;
+  }
+  /* links drop in one after another */
+  .nav-links li {
+    opacity: 0;
+    transform: translateY(-6px);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+  }
+  .nav-links.open li {
+    opacity: 1;
+    transform: none;
+    transition-duration: 0.3s;
+  }
+  @for $i from 1 through 5 {
+    .nav-links.open li:nth-child(#{$i}) {
+      transition-delay: #{0.04 + $i * 0.04}s;
+    }
   }
   .nav-links a {
     display: block;

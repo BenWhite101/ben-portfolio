@@ -5,8 +5,10 @@
 
   /* ---- nav ---- */
   const navBtn = document.getElementById('navToggle'), navLinks = document.getElementById('navLinks');
-  navBtn.addEventListener('click', () => { const o = navLinks.classList.toggle('open'); navBtn.setAttribute('aria-expanded', String(o)); });
-  navLinks.addEventListener('click', e => { if (e.target.closest('a')) { navLinks.classList.remove('open'); navBtn.setAttribute('aria-expanded', 'false'); } });
+  const setNav = o => { navLinks.classList.toggle('open', o); navBtn.setAttribute('aria-expanded', String(o)); navBtn.setAttribute('aria-label', o ? 'Close menu' : 'Menu'); };
+  navBtn.addEventListener('click', () => setNav(!navLinks.classList.contains('open')));
+  navLinks.addEventListener('click', e => { if (e.target.closest('a')) setNav(false); });
+  addEventListener('keydown', e => { if (e.key === 'Escape' && navLinks.classList.contains('open')) { setNav(false); navBtn.focus(); } });
 
   /* ---- hero code card: file tabs (arrow keys move between them) ---- */
   const tabs = [...document.querySelectorAll('.hero-card [role="tab"]')];
@@ -93,6 +95,7 @@
   /* ---- palettes for the canvas scenes (CSS tokens handle the rest of the page) ---- */
   const PALS = {
     night: {
+      heroStars: 1, // twinkle strength in the hero (0 on the pale palettes)
       aurora: ['246,200,110', '169,180,224', '79,157,145', '60,80,170'],
       sky: [[0, '#0a0f1e'], [.35, '#131d3a'], [.62, '#26375f'], [1, '#2d3f6a']],
       glow: '246,200,110', glowA: .09, glowAt: [.35, .66],
@@ -102,6 +105,7 @@
       particles: 'fireflies', fly: ['255,250,222', '255,226,150', '246,200,110'], tree: 'pine', floor: '10,15,30'
     },
     dusk: {
+      heroStars: .7,
       aurora: ['255,143,79', '234,164,180', '217,122,154', '90,40,110'],
       sky: [[0, '#170d1d'], [.28, '#3a1a45'], [.48, '#8a3a5c'], [.6, '#e0714a'], [.74, '#ffb36b'], [1, '#ffcf8a']],
       glow: '255,143,79', glowA: .2, glowAt: [.62, .56],
@@ -111,6 +115,7 @@
       particles: 'fireflies', fly: ['255,244,226', '255,196,150', '255,130,80'], tree: 'pine', floor: '23,13,29'
     },
     autumn: {
+      heroStars: .55,
       aurora: ['247,197,47', '217,183,118', '168,184,92', '170,84,30'],
       sky: [[0, '#1a1208'], [.3, '#3d2a10'], [.55, '#8a5a1c'], [.72, '#d09232'], [1, '#f0c66a']],
       glow: '247,197,47', glowA: .16, glowAt: [.28, .52],
@@ -121,6 +126,7 @@
       particles: 'leaves', leafCols: ['#f7c52f', '#f0a42a', '#e0781f', '#c9511c', '#e8d04a'], tree: 'round', floor: '22,17,10'
     },
     northern: {
+      heroStars: 1,
       aurora: ['110,231,183', '157,120,255', '80,200,210', '40,60,150'],
       sky: [[0, '#04070f'], [.35, '#081324'], [.6, '#0f2336'], [1, '#132c3c']],
       glow: '110,231,183', glowA: .1, glowAt: [.45, .5],
@@ -138,6 +144,7 @@
       particles: 'fireflies', fly: ['235,255,248', '170,255,220', '110,231,183'], flySize: [8, 18], tree: 'pine', floor: '7,11,22'
     },
     morning: {
+      heroStars: 0,
       aurora: ['245,163,127', '201,166,200', '255,210,160', '150,160,220'],
       sky: [[0, '#7d8fc4'], [.28, '#c3a3c9'], [.48, '#f3bea8'], [.64, '#ffd6b3'], [1, '#fff1e2']],
       glow: '255,196,150', glowA: .4, glowAt: [.3, .56],
@@ -148,6 +155,7 @@
       particles: 'fireflies', blink: false, fly: ['255,255,250', '255,240,220', '255,220,190'], flySize: [6, 14], tree: 'pine', floor: '251,241,236'
     },
     day: {
+      heroStars: 0,
       aurora: ['29,111,224', '140,194,255', '93,154,110', '255,236,170'],
       sky: [[0, '#3a80d6'], [.42, '#86bbee'], [.66, '#cbe4f7'], [1, '#eef6fb']],
       glow: '255,255,235', glowA: .3, glowAt: [.82, .18],
@@ -170,7 +178,24 @@
     { a: .30, r: .45, sx: .0001, sy: .00007, px: .55, py: .75, ph: 4 },
     { a: .42, r: .6, sx: .00005, sy: .00008, px: .15, py: .8, ph: 1 }
   ];
-  function aSize() { aw = Math.max(1, Math.round(hero.clientWidth * .22)); ah = Math.max(1, Math.round(hero.clientHeight * .22)); au.width = aw; au.height = ah; }
+  const hs = document.getElementById('heroStars'), sctx = hs.getContext('2d');
+  let hw = 1, hh = 1, heroStars = [];
+  function aSize() {
+    aw = Math.max(1, Math.round(hero.clientWidth * .22)); ah = Math.max(1, Math.round(hero.clientHeight * .22)); au.width = aw; au.height = ah;
+    hw = hero.clientWidth; hh = hero.clientHeight; hs.width = Math.round(hw * DPR); hs.height = Math.round(hh * DPR);
+    const r = mulberry32(77);
+    heroStars = Array.from({ length: Math.round(Math.min(70, Math.max(30, hw * hh / 9000))) }, () => ({ x: r() * hw, y: Math.pow(r(), 1.4) * hh * .8, r: .4 + Math.pow(r(), 3) * 1.1, d: .3 + r() * .7, ph: r() * 6.28, sp: .0004 + r() * .0012 }));
+  }
+  function drawHeroStars(t) {
+    sctx.setTransform(DPR, 0, 0, DPR, 0, 0); sctx.clearRect(0, 0, hw, hh);
+    if (!P.heroStars) return;
+    sctx.fillStyle = '#f2f0ea';
+    for (const s of heroStars) {
+      sctx.globalAlpha = P.heroStars * (.15 + .65 * Math.pow(.5 + .5 * Math.sin(t * s.sp + s.ph), 2));
+      sctx.beginPath(); sctx.arc(s.x - (amx - .5) * 10 * s.d, s.y - (amy - .5) * 6 * s.d, s.r, 0, 6.2832); sctx.fill();
+    }
+    sctx.globalAlpha = 1;
+  }
   hero.addEventListener('pointermove', e => { const r = hero.getBoundingClientRect(); tmx = (e.clientX - r.left) / r.width; tmy = (e.clientY - r.top) / r.height; kick(); });
   function aDraw(t) {
     amx += (tmx - amx) * .03; amy += (tmy - amy) * .03;
@@ -184,6 +209,7 @@
       actx.fillStyle = g; actx.fillRect(0, 0, aw, ah);
     });
     actx.globalCompositeOperation = 'source-over';
+    drawHeroStars(RM ? 5200 : t);
   }
 
   /* ---- forest ---- */
@@ -568,24 +594,22 @@
   function resizeAll() { aSize(); build(); buildSky(); buildLights(); aDraw(0); fDraw(0); kick(); }
   let rT; new ResizeObserver(() => { clearTimeout(rT); rT = setTimeout(resizeAll, 60); }).observe(document.body);
 
-  /* ---- design preview (temporary) ---- */
+  /* ---- design preview: palette switcher, toggled with the B key ---- */
   const root = document.documentElement, tp = document.getElementById('typepick'), tpToggle = document.getElementById('tpToggle');
   const store = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} }, recall = k => { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } };
-  function setType(v) {
-    if (v) root.dataset.type = v; else delete root.dataset.type;
-    tp.querySelectorAll('[data-type]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.type === v)));
-    store('typePreview', v);
-  }
   function setPalette(v, redraw = true) {
     if (v) root.dataset.palette = v; else delete root.dataset.palette;
     tp.querySelectorAll('[data-palette]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.palette === v)));
     P = PALS[v] || PALS.night; makeSprite(); store('palettePreview', v);
     if (redraw) resizeAll();
   }
-  tp.querySelectorAll('[data-type]').forEach(b => b.addEventListener('click', () => setType(b.dataset.type)));
   tp.querySelectorAll('[data-palette]').forEach(b => b.addEventListener('click', () => setPalette(b.dataset.palette)));
-  tpToggle.addEventListener('click', () => { const min = tp.classList.toggle('min'); tpToggle.textContent = min ? 'Show' : 'Hide'; tpToggle.setAttribute('aria-expanded', String(!min)); });
-  setType(recall('typePreview'));
+  tpToggle.addEventListener('click', () => { tp.hidden = true; });
+  addEventListener('keydown', e => {
+    if (e.key.toLowerCase() !== 'b' || e.ctrlKey || e.metaKey || e.altKey || e.repeat) return;
+    if (e.target.closest('input, textarea, select, [contenteditable]')) return; // don't hijack typing
+    tp.hidden = !tp.hidden;
+  });
   setPalette(recall('palettePreview') || 'northern', false);
 
   resizeAll();

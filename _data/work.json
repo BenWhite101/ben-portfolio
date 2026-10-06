@@ -33,7 +33,9 @@
     "summary": "Built the Magento 2 site and theme end to end.",
     "points": [
       "Developed the full custom theme",
-      "Worked closely with the backend team on a bespoke battery lookup module"
+      "Worked closely with the backend team on a bespoke battery lookup module",
+      "Created templates and reusable components"
+
     ],
     "tags": [
       "Magento 2",
