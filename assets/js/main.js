@@ -367,6 +367,7 @@
     }
     const oys = [];
     LAYERS.forEach((L, i) => {
+      if (i === 2) drawDragon(ft, sp); // between the far ridges and the treeline, so the near hills can hide it
       const ox = -PAD + (mouse.sx - .5) * 2 * L.depth * 26, oy = sp * L.depth * 70; oys.push(oy);
       ctx.drawImage(layerC[i], ox, oy, W + PAD * 2, H + EXTRA);
       if (hl[i] > .01) {
@@ -382,6 +383,88 @@
     ctx.fillStyle = ff; ctx.fillRect(0, H * .84, W, H * .16);
     if (P.particles === 'leaves') drawLeaves(ft, oys); else if (P.particles === 'birds') drawBirds(ft); else drawFlies(ft, oys);
     ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1;
+  }
+
+  /* ---- easter egg: a dragon crosses the ridges now and then, alternating direction ---- */
+  const dc = document.createElement('canvas'), dx2 = dc.getContext('2d');
+  const DB = { x0: -2.15, x1: 1.35, y0: -1.7, y1: 1.7 }; // dragon bounds in body units
+  const drg = { on: false, dir: 1, p: 0, dur: 14000, wait: 7000, last: 0 };
+  function dragonPath(x, ft, f) {
+    // spine (x, y, half-width) from tail tip to head, tail swaying
+    const spine = [[-1.85, .05, .012], [-1.5, .03, .03], [-1.1, 0, .05], [-.7, -.02, .08], [-.4, -.03, .12], [-.1, -.04, .15], [.2, -.05, .14], [.42, -.1, .1], [.6, -.2, .075], [.74, -.3, .066], [.86, -.36, .066], [.95, -.36, .07]]
+      .map(([sx, sy, w]) => [sx, sy + (sx < -.4 ? Math.sin(ft * .003 - sx * 2.2) * .07 * Math.min(1, (-sx - .4) / .8) : 0), w]);
+    const top = [], bot = [];
+    spine.forEach(([sx, sy, w], k) => {
+      const a = spine[Math.max(0, k - 1)], b = spine[Math.min(spine.length - 1, k + 1)];
+      const tx = b[0] - a[0], ty = b[1] - a[1], l = Math.hypot(tx, ty) || 1;
+      top.push([sx + ty / l * w, sy - tx / l * w]); bot.push([sx - ty / l * w, sy + tx / l * w]);
+    });
+    const ring = top.concat(bot.reverse());
+    x.moveTo(ring[0][0], ring[0][1]);
+    for (let k = 1; k < ring.length; k++) { const [ax, ay] = ring[k], [bx, by] = ring[(k + 1) % ring.length]; x.quadraticCurveTo(ax, ay, (ax + bx) / 2, (ay + by) / 2); }
+    x.closePath();
+    // tail spade
+    const [tx0, ty0] = spine[0]; x.moveTo(tx0 + .04, ty0); x.lineTo(tx0 - .16, ty0 - .09); x.lineTo(tx0 - .1, ty0 + .01); x.lineTo(tx0 - .17, ty0 + .09); x.closePath();
+    // head: wedge snout, jaw and swept-back horns
+    x.moveTo(.88, -.42); x.lineTo(1.04, -.4); x.lineTo(1.2, -.34); x.lineTo(1.18, -.3); x.lineTo(1.05, -.29); x.lineTo(1.12, -.25); x.lineTo(.92, -.27); x.closePath();
+    x.moveTo(.95, -.4); x.quadraticCurveTo(.82, -.49, .68, -.57); x.quadraticCurveTo(.84, -.47, .9, -.37); x.closePath();
+    x.moveTo(.98, -.39); x.quadraticCurveTo(.88, -.45, .78, -.46); x.quadraticCurveTo(.9, -.41, .94, -.35); x.closePath();
+    // back spines
+    for (let k = 0; k < 6; k++) { const sx = .55 - k * .22, sy = -.13 + k * .015 - (k ? .02 : 0); x.moveTo(sx + .05, sy + .02); x.lineTo(sx - .02, sy - .08 + k * .008); x.lineTo(sx - .06, sy + .03); x.closePath(); }
+    // tucked legs
+    x.moveTo(-.42, .02); x.quadraticCurveTo(-.5, .22, -.38, .32); x.lineTo(-.28, .31); x.quadraticCurveTo(-.4, .22, -.28, .06); x.closePath();
+    x.moveTo(.18, .04); x.quadraticCurveTo(.24, .18, .36, .22); x.lineTo(.4, .19); x.quadraticCurveTo(.3, .15, .3, .02); x.closePath();
+  }
+  function wingPath(x, f, ox, k) {
+    // bat wing: arm to the wrist, three fingers, scalloped membrane back to the flank. f = cos of the flap angle
+    const P2 = ([px, span]) => [px + ox, -.07 - span * f * k];
+    const S = P2([.22, 0]), E = P2([.02, .55]), Wr = P2([.32, 1.02]), F = [P2([.12, 1.5]), P2([-.32, 1.24]), P2([-.62, .82])], R = P2([-.42, 0]);
+    const sc = (a, b) => { const mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2; return [mx + (S[0] - mx) * .22, my + (S[1] - my) * .22]; };
+    x.moveTo(S[0], S[1]); x.lineTo(E[0], E[1]); x.lineTo(Wr[0], Wr[1]); x.lineTo(F[0][0], F[0][1]);
+    let prev = F[0];
+    for (const pt of [F[1], F[2], R]) { const c = sc(prev, pt); x.quadraticCurveTo(c[0], c[1], pt[0], pt[1]); if (pt !== R) x.lineTo(Wr[0], Wr[1]), x.lineTo(pt[0], pt[1]); prev = pt; }
+    x.closePath();
+  }
+  function drawDragon(ft, sp) {
+    if (RM) return;
+    const dt = drg.last ? Math.min(100, Math.max(0, ft - drg.last)) : 16; drg.last = ft;
+    if (!drg.on) {
+      drg.wait -= dt; if (drg.wait > 0) return;
+      drg.on = true; drg.p = 0; drg.dur = 11000 + W * 4;
+    }
+    drg.p += dt / drg.dur;
+    if (drg.p >= 1) { drg.on = false; drg.dir *= -1; drg.wait = 15000 + Math.random() * 15000; return; }
+    const s = Math.max(15, Math.min(30, W * .021)), m = 2.4 * s, p = drg.p;
+    // slow wingbeats that fade into glides
+    const beat = .5 + .5 * Math.sin(ft * .00045), ph = ft * .0042, f = .3 * (1 - beat) + beat * Math.sin(ph);
+    const x = drg.dir > 0 ? -m + (W + m * 2) * p : W + m - (W + m * 2) * p;
+    const y = H * (.27 + .2 * Math.sin(Math.PI * p)) - Math.cos(ph) * beat * s * .12;
+    const slope = Math.cos(Math.PI * p) * .2 * H * Math.PI / (W + m * 2); // dy/dx of the swoop
+    // draw the silhouette offscreen, then light its upper edges with the aurora
+    const cw = Math.ceil((DB.x1 - DB.x0) * s * DPR), ch = Math.ceil((DB.y1 - DB.y0) * s * DPR);
+    if (dc.width !== cw || dc.height !== ch) { dc.width = cw; dc.height = ch; }
+    dx2.setTransform(1, 0, 0, 1, 0, 0); dx2.globalCompositeOperation = 'source-over'; dx2.clearRect(0, 0, cw, ch);
+    dx2.setTransform(s * DPR, 0, 0, s * DPR, -DB.x0 * s * DPR, -DB.y0 * s * DPR);
+    const base = P.layers[4][1];
+    dx2.fillStyle = base; dx2.globalAlpha = .82; dx2.beginPath(); wingPath(dx2, f, -.1, .82); dx2.fill();
+    dx2.globalAlpha = 1; dx2.beginPath(); dragonPath(dx2, ft, f); dx2.fill();
+    dx2.beginPath(); wingPath(dx2, f, 0, 1); dx2.fill();
+    dx2.globalCompositeOperation = 'source-atop';
+    const g = dx2.createLinearGradient(0, DB.y0, 0, .35);
+    g.addColorStop(0, `rgba(${P.rim[1]},.4)`); g.addColorStop(.55, `rgba(${P.rim[1]},.12)`); g.addColorStop(1, `rgba(${P.rim[1]},0)`);
+    dx2.fillStyle = g; dx2.fillRect(DB.x0, DB.y0, DB.x1 - DB.x0, DB.y1 - DB.y0);
+    dx2.globalCompositeOperation = 'source-over';
+    // faint bones on the near wing
+    dx2.strokeStyle = `rgba(${P.rim[1]},.28)`; dx2.lineWidth = .028; dx2.lineCap = dx2.lineJoin = 'round';
+    const bone = ([px, span]) => [px, -.07 - span * f], Wr = bone([.32, 1.02]);
+    dx2.beginPath(); [[.22, 0], [.02, .55], [.32, 1.02], [.12, 1.5]].map(bone).forEach(([a, b2], k) => k ? dx2.lineTo(a, b2) : dx2.moveTo(a, b2));
+    for (const tip of [[-.32, 1.24], [-.62, .82]]) { const [a, b2] = bone(tip); dx2.moveTo(Wr[0], Wr[1]); dx2.lineTo(a, b2); }
+    dx2.stroke();
+    // place it with the same parallax as the ridges around it
+    const ox = (mouse.sx - .5) * 2 * .4 * 26, oy = sp * .4 * 70;
+    ctx.save(); ctx.translate(x + ox, y + oy); ctx.rotate(Math.atan(slope) * drg.dir * .8); ctx.scale(drg.dir, 1);
+    ctx.globalAlpha = .95; ctx.drawImage(dc, DB.x0 * s, DB.y0 * s, (DB.x1 - DB.x0) * s, (DB.y1 - DB.y0) * s);
+    ctx.restore(); ctx.globalAlpha = 1;
   }
 
   function drawFlies(ft, oys) {
