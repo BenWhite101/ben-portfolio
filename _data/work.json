@@ -16,11 +16,12 @@
       { "value": "0.092", "label": "CLS, reduced to" }
     ],
     "tags": [
-      "Magento 2",
+      "Magento 2 Theme Build",
       "eCommerce",
       "CMS",
       "SCSS",
-      "Figma"
+      "Figma",
+      "Core Web Vitals improvements"
     ]
   },
   {
@@ -30,16 +31,20 @@
     "c1": "#b0303a",
     "c2": "#26080b",
     "meta": "2025 · Magento 2",
-    "summary": "Built the Magento 2 site and theme end to end.",
+    "summary": "Built the Magento 2 theme end to end, including CMS content and templates.",
     "points": [
-      "Developed the full custom theme",
+      "Frontend theme built end to end, including PLP, PDP, Basket and Checkout",
       "Worked closely with the backend team on a bespoke battery lookup module",
       "Created templates and reusable components"
 
     ],
     "tags": [
-      "Magento 2",
-      "Hyvä"
+      "Magento 2 Theme Build",
+      "CMS Content/Templating",
+      "SCSS",
+      "Marketing email development",
+      "Core Web Vitals improvements"
+
     ]
   },
     {
@@ -56,8 +61,11 @@
       "Checkout"
     ],
     "tags": [
-      "Magento 2",
-      "Hyvä"
+      "Magento 2 Theme Build",
+      "CMS Content/Templating",
+      "SCSS",
+      "Marketing email development",
+      "Core Web Vitals improvements"
     ]
   },
    {
@@ -73,8 +81,8 @@
       "Built and populated the mega menu, matched closely to Figma designs"
     ],
     "tags": [
-      "Magento 2",
-      "Hyvä"
+      "Magento 2 Theme Build"
+      
     ]
   },
   {
@@ -84,9 +92,17 @@
     "c1": "#2f6f8f",
     "c2": "#0a1a26",
     "meta": "2021 · Magento 2",
-    "summary": "A full Magento 2 build, replacing their previous Magento 1 store.",
+    "summary": "A full Magento 2 build, replacing their previous Magento 1 store, with new CMS content pages",
+    "points": [
+      "Created 20+ CMS templates (e.g. home, showrooms, case studies, tile calculator)",
+      "Frontend theme built end to end, including PLP, PDP, Basket and Checkout",
+      "Built to sell, with a clean layout that lets each product's design speak for itself"
+    ],
+     "metrics": [
+      { "value": "20+", "label": "individual CMS designs built" }
+    ],
     "tags": [
-      "Magento 2",
+      "Magento 2 Theme Build",
       "eCommerce",
       "Full theme build",
       "LESS",
@@ -101,10 +117,31 @@
     "c1": "#b87a26",
     "c2": "#2a1a08",
     "meta": "2020 · Magento 2 Single Product Site",
-    "summary": "Moved the store from Magento 1 to Magento 2, alongside a redesign.",
+    "summary": "Moved the store from Magento 1 to Magento 2, alongside building a redesign.",
     "tags": [
-      "Magento 2",
+      "Magento 2 Theme Build",
       "eCommerce"
+    ]
+  },
+    {
+    "name": "Bradfords",
+    "img": "bradfords.png",
+    "url": "bradfords.example",
+    "c1": "#6b4fa0",
+    "c2": "#150d26",
+    "meta": "2026 · Hyvä Conversion",
+    "summary": "Magento 2 site reconstructed to a modern Hyvä Theme",
+    "points": [
+      "Collaborated closely with the Frontend Lead to reconstruct the original design as close as possible",
+      "Converted templates and modules from SCSS to Tailwind CSS",
+      "Fixed existing site styling issues + improvements to CLS Core Web Vitals scores"
+    ],
+    "tags": [
+      "Magento 2 Theme Build",
+      "Hyvä",
+      "Tailwind",
+      "Alpine functionality",
+      "Core Web Vitals improvements"
     ]
   },
   {
@@ -113,12 +150,19 @@
     "url": "filminginengland.example",
     "c1": "#7a4fd0",
     "c2": "#1a1033",
-    "meta": "20XX · WordPress Build",
-    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "meta": "2021 · WordPress Build",
+    "summary": "Helped FIE develop multiple page templates and layouts used throughout the site",
+    "points": [
+      "Created an interactive + responsive SVG map, linking to different locations",
+      "Managed content and imagery"
+    ],
     "tags": [
       "WordPress Build",
       "CMS Content/Templating",
       "SVG"
+    ],
+    "metrics": [
+      { "value": "+41%", "label": "pages per session viewed" }
     ]
   },
   {
@@ -128,11 +172,14 @@
     "c1": "#5b6478",
     "c2": "#141822",
     "meta": "20XX · WordPress Build",
-    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "summary": "A fresh new WordPress site to improve contact rates and form submissions",
     "tags": [
       "WordPress Build",
       "CMS Content/Templating",
       "Form setup + email"
+    ],
+    "metrics": [
+      { "value": "+26%", "label": "form submission rate" }
     ]
   },
   {
@@ -142,11 +189,12 @@
     "c1": "#a8443f",
     "c2": "#240c0b",
     "meta": "2024 · Magento 2",
-    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "summary": "New site theme constructed to modernise and improve outdated logistics/web pages",
     "tags": [
-      "Magento 2",
+      "Magento 2 Theme Build",
       "eCommerce",
-      "SCSS"
+      "SCSS",
+      "CMS"
     ]
   },
   {
@@ -156,13 +204,15 @@
     "c1": "#3d5a9c",
     "c2": "#0c1428",
     "meta": "2019 · WordPress Site Build",
-    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "summary": "I updated a WordPress build with a custom-made theme and new content/templates, focused on simplifying contact methods and increasing form submission rates",
     "metrics": [
       { "value": "36%", "label": "increased form submissions" }
     ],
     "tags": [
-      "Magento 2",
-      "Hyvä"
+      "WordPress",
+      "LESS",
+      "Form setup + email",
+      "Image editing"
     ]
   },
   {
@@ -172,10 +222,12 @@
     "c1": "#c0563a",
     "c2": "#2a0f08",
     "meta": "2022 · WordPress Site Build",
-    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "summary": "Developed a new WordPress Theme, allowing users to view and book various events through a plugin. Created custom event pages with unique blocks conveying various points of interest (e.g. Triathlon distances)",
     "tags": [
-      "Magento 2",
-      "Hyvä"
+      "WordPress",
+      "LESS",
+      "Event management",
+      "Design"
     ]
   },
   {
@@ -185,10 +237,12 @@
     "c1": "#2f7d6d",
     "c2": "#09201b",
     "meta": "2022 · Magento 2",
-    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "summary": "Following Figma designs, I created the design system, elements and blocks including the Header, CMS, Footer, PLP and PDP pages. This was a new Magento 2 site to upgrade from and retire the customer's existing Magento 1 site.",
     "tags": [
-      "Magento 2",
-      "Hyvä"
+      "Magento 2 Theme Build",
+      "CMS Content/Templating",
+      "LESS",
+      "Marketing email development"
     ]
   },
   
@@ -200,26 +254,17 @@
     "url": "huwsgray.example",
     "c1": "#4b7a3a",
     "c2": "#0f1d0a",
-    "meta": "2026 · Project type",
-    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "meta": "2026 · Hyvä Theme",
+    "summary": "Various work through developing templates or building out designs in Hyvä, with Tailwind CSS and Alpine.js",
     "tags": [
-      "Magento 2",
-      "Hyvä"
+      "Magento 2 Theme Build",
+      "Hyvä",
+      "Tailwind",
+      "CMS Content/Templating",
+      "Alpine functionality"
     ]
   },
-  {
-    "name": "Bradfords",
-    "img": "bradfords.png",
-    "url": "bradfords.example",
-    "c1": "#6b4fa0",
-    "c2": "#150d26",
-    "meta": "20XX · Hyvä Conversion",
-    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
-    "tags": [
-      "Magento 2",
-      "Hyvä"
-    ]
-  },
+
   {
     "name": "Marlena Portfolio",
     "img": "marlena.png",
@@ -227,10 +272,22 @@
     "c1": "#a0507a",
     "c2": "#240b19",
     "meta": "2026 · Eleventy Build",
-    "summary": "Placeholder summary. Add a sentence or two about what you built and the result.",
+    "summary": "Used 11ty with a Skeleton template to develop a modern, personalised portfolio",
+    "points": [
+      "Core Web Vitals in the green",
+      "Set up end to end, from design to deployment"
+    ],
+     "metrics": [
+      { "value": "98", "label": "Lighthouse performance" },
+      { "value": "+62%", "label": "contact interactions" }
+    ],
     "tags": [
       "Portfolio",
-      "Eleventy"
+      "Eleventy",
+      "Netlify",
+      "Design",
+      "SCSS",
+      "Core Web Vitals improvements"
     ]
   }
 ]
