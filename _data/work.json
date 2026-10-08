@@ -30,7 +30,7 @@
     "url": "yuasa.example",
     "c1": "#b0303a",
     "c2": "#26080b",
-    "meta": "2025 · Magento 2",
+    "meta": "2026 · Magento 2",
     "summary": "Built the Magento 2 theme end to end, including CMS content and templates.",
     "points": [
       "Frontend theme built end to end, including PLP, PDP, Basket and Checkout",
@@ -71,7 +71,7 @@
    {
     "name": "Warner Bros. UK",
     "img": "warner.png",
-    "url": "warnerbros.example",
+    "url": "shop.warnerbros.co.uk",
     "c1": "#2c5fa8",
     "c2": "#08142a",
     "meta": "2020 · Magento 2",
@@ -110,20 +110,9 @@
     ]
   },
 
+
+
   {
-    "name": "Farbgel",
-    "img": "farbgel.png",
-    "url": "farbgel.example",
-    "c1": "#b87a26",
-    "c2": "#2a1a08",
-    "meta": "2020 · Magento 2 Single Product Site",
-    "summary": "Moved the store from Magento 1 to Magento 2, alongside building a redesign.",
-    "tags": [
-      "Magento 2 Theme Build",
-      "eCommerce"
-    ]
-  },
-    {
     "name": "Bradfords",
     "img": "bradfords.png",
     "url": "bradfords.example",
@@ -144,6 +133,32 @@
       "Core Web Vitals improvements"
     ]
   },
+  {
+    "name": "Portfolio Build",
+    "img": "marlena.png",
+    "url": "marlenakaminska.com",
+    "c1": "#a0507a",
+    "c2": "#240b19",
+    "meta": "2026 · Eleventy Build",
+    "summary": "Used 11ty with a Skeleton template to develop a modern, personalised portfolio",
+    "points": [
+      "Core Web Vitals in the green",
+      "Set up end to end, from design to deployment"
+    ],
+     "metrics": [
+      { "value": "98", "label": "Lighthouse performance" },
+      { "value": "+62%", "label": "contact interactions" }
+    ],
+    "tags": [
+      "Portfolio",
+      "Eleventy",
+      "Netlify",
+      "Design",
+      "SCSS",
+      "Core Web Vitals improvements"
+    ]
+  },
+    
   {
     "name": "Filming in England",
     "img": "fie.png",
@@ -171,8 +186,12 @@
     "url": "grayandcosolicitors.co.uk",
     "c1": "#5b6478",
     "c2": "#141822",
-    "meta": "20XX · WordPress Build",
+    "meta": "2020 · WordPress Build",
     "summary": "A fresh new WordPress site to improve contact rates and form submissions",
+    "points": [
+      "Designed sections of the site, working closely with the company and requirements",
+      "Developed and templated pages, allowing user content and edits through the CMS"
+    ],
     "tags": [
       "WordPress Build",
       "CMS Content/Templating",
@@ -180,6 +199,19 @@
     ],
     "metrics": [
       { "value": "+26%", "label": "form submission rate" }
+    ]
+  },
+    {
+    "name": "Farbgel",
+    "img": "farbgel.png",
+    "url": "farbgel.example",
+    "c1": "#b87a26",
+    "c2": "#2a1a08",
+    "meta": "2020 · Magento 2 Single Product Site",
+    "summary": "Moved the store from Magento 1 to Magento 2, alongside building a redesign.",
+    "tags": [
+      "Magento 2 Theme Build",
+      "eCommerce"
     ]
   },
   {
@@ -222,7 +254,7 @@
     "c1": "#c0563a",
     "c2": "#2a0f08",
     "meta": "2022 · WordPress Site Build",
-    "summary": "Developed a new WordPress Theme, allowing users to view and book various events through a plugin. Created custom event pages with unique blocks conveying various points of interest (e.g. Triathlon distances)",
+    "summary": "Developed a new WordPress Theme, allowing users to view and book various events through a an event plugin. Created custom event pages with unique blocks conveying various points of interest (e.g. Triathlon distances)",
     "tags": [
       "WordPress",
       "LESS",
@@ -263,31 +295,7 @@
       "CMS Content/Templating",
       "Alpine functionality"
     ]
-  },
-
-  {
-    "name": "Marlena Portfolio",
-    "img": "marlena.png",
-    "url": "marlena.example",
-    "c1": "#a0507a",
-    "c2": "#240b19",
-    "meta": "2026 · Eleventy Build",
-    "summary": "Used 11ty with a Skeleton template to develop a modern, personalised portfolio",
-    "points": [
-      "Core Web Vitals in the green",
-      "Set up end to end, from design to deployment"
-    ],
-     "metrics": [
-      { "value": "98", "label": "Lighthouse performance" },
-      { "value": "+62%", "label": "contact interactions" }
-    ],
-    "tags": [
-      "Portfolio",
-      "Eleventy",
-      "Netlify",
-      "Design",
-      "SCSS",
-      "Core Web Vitals improvements"
-    ]
   }
+
+  
 ]

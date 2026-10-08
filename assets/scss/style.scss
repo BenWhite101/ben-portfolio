@@ -1257,7 +1257,7 @@ pre.code {
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 10px;
   align-items: center;
 }
 .tags span {
@@ -1334,7 +1334,7 @@ pre.code {
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
-  object-position: 50% 35%;
+  object-position: 50% 50%;
   border-radius: 19px;
   border: 2px solid var(--ink);
 }
@@ -1459,7 +1459,8 @@ pre.code {
   list-style: none;
 }
 /* glass pills tinted by the group hue, lit from the top-left like the project cards */
-.skill-pills li {
+.skill-pills li,
+.tags span {
   font: 500 0.78rem var(--f-mono);
   color: color-mix(in srgb, var(--c1) 30%, var(--moon));
   background: radial-gradient(

@@ -49,7 +49,7 @@ description: Frontend developer building fast, accessible Magento 2 storefronts 
   caresAbout: [<span class="s">'speed'</span>, <span class="s">'access'</span>, <span class="s">'detail'</span>],
 };
 
-<span class="p">// give me a design, get back a website</span>
+<!-- <span class="p">// give me a design, get back a website</span> -->
 ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span class="caret" aria-hidden="true"></span></code></pre>
 
       <pre class="code" role="tabpanel" id="pane-html" aria-labelledby="tab-html" tabindex="0" hidden><code><span class="t">&lt;article</span> <span class="a">class</span>=<span class="s">"card"</span><span class="t">&gt;</span>
@@ -66,9 +66,9 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
   <span class="a">container-type</span>: inline-size;
 }
 <span class="t">@media</span> (prefers-reduced-motion: reduce) {
-  <span class="t">*</span> { <span class="a">animation</span>: none; }
+  <span class="t">*</span> { <span class="a">animation</span>: none<span class="caret" aria-hidden="true"></span>; } 
 }
-<span class="p">/* fast, fluid, kind to everyone */</span><span class="caret" aria-hidden="true"></span></code></pre>
+<span class="p"></span></code></pre>
       </div>
 
       <div class="build" aria-hidden="true">
@@ -157,7 +157,7 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
       <div class="section-head">
         <div>
           <p class="eyebrow">Selected work · 2018–2026</p>
-          <h2 class="display" id="work-title">Projects I've worked on.</h2>
+          <h2 class="display" id="work-title">Live sites I've worked on.</h2>
         </div>
         <!-- <p>A mix of full Hyvä builds, Luma migrations and the smaller pieces that make trade buying easier. Each one was
           measured before and after launch.</p> -->
@@ -165,7 +165,7 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
 
       <div class="work-grid">
         {%- for p in work %}
-        <article class="card"{% if forloop.index > 4 %} data-extra style="--i:{{ forloop.index | minus: 5 }}"{% endif %}>
+        <article class="card"{% if forloop.index > 6 %} data-extra style="--i:{{ forloop.index | minus: 7 }}"{% endif %}>
           <div class="mock" style="--c1:{{ p.c1 }};--c2:{{ p.c2 }}">
             <div class="win win-shot">
               <div class="m-bar" aria-hidden="true"><i></i><i></i><i></i><span>{{ p.url }}</span></div>
@@ -197,12 +197,12 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
               {%- endfor %}
             </div>
             {%- endif %}
-            <div class="tags">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}{% if p.link %}<a href="{{ p.link }}">Case study →</a>{% endif %}</div>
+            <div class="tags" style="--c1:#9d8cff">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}{% if p.link %}<a href="{{ p.link }}">Case study →</a>{% endif %}</div>
           </div>
         </article>
         {%- endfor %}
       </div>
-      {%- assign extra = work.size | minus: 4 %}
+      {%- assign extra = work.size | minus: 6 %}
       {%- if extra > 0 %}
       <div class="work-more">
         <button class="btn btn-ghost magnetic" type="button" id="work-more" aria-expanded="false" hidden>
@@ -227,13 +227,13 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
     <div class="wrap about-grid">
       <div class="about-side">
         <div class="about-photo">
-          <img src="/assets/img/me.jpg" alt="Photo of Ben" width="306" height="306" loading="lazy" decoding="async">
+          <img src="/assets/img/about.jpg" alt="Ben, smiling, in glasses and a grey overshirt" width="306" height="306" loading="lazy" decoding="async">
         </div>
         <dl class="about-facts">
           <div><dt>Based in</dt><dd>Greater Manchester, UK</dd></div>
           <div><dt>Experience</dt><dd>8+ years</dd></div>
           <div><dt>Focus</dt><dd>Magento 2, Hyvä &amp; WordPress</dd></div>
-          <div><dt>Open to</dt><dd>Freelance projects &amp; roles</dd></div>
+          <div><dt>Open to</dt><dd>Work & Freelance</dd></div>
         </dl>
       </div>
       <div class="about-copy">
@@ -245,14 +245,14 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
         <p>Most of my work today is Magento 2 and Hyvä storefronts, alongside WordPress builds and email templates. My
           favourite part is the moment a design becomes something real: fast, accessible and right down to the
           details.</p>
-        <ul class="about-how" aria-label="How I work">
+        <!-- <ul class="about-how" aria-label="How I work">
           <li><span class="kind">Design</span><strong>Faithful to the design</strong><span class="desc">Built closely
               to Figma, down to the spacing and states</span></li>
           <li><span class="kind">Team</span><strong>Close to the backend</strong><span class="desc">Working alongside
               backend developers on custom features, like Yuasa's battery lookup</span></li>
           <li><span class="kind">Quality</span><strong>Accessible and fast by default</strong><span class="desc">Checked
               as I build, not bolted on at the end</span></li>
-        </ul>
+        </ul> -->
       </div>
     </div>
   </section>
@@ -303,7 +303,7 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
                 class="kind">Behaviour</span><strong>JS &amp; Alpine.js</strong><span class="desc">Small
                 components, no RequireJS or Knockout</span></span><span class="arr" aria-hidden="true">→</span></li>
           <li tabindex="0" data-layer="1"><span class="num">04</span><span class="body"><span
-                class="kind">Platform</span><strong>Magento 2 &amp; Hyvä || Wordpress</strong><span class="desc">Layout XML,
+                class="kind">Platform</span><strong>Magento 2 / Hyvä / Wordpress</strong><span class="desc">Layout XML,
                 ViewModels, Hyvä Checkout, compat modules</span></span><span class="arr" aria-hidden="true">→</span>
           </li>
           <li tabindex="0" data-layer="0"><span class="num">05</span><span class="body"><span
@@ -371,7 +371,7 @@ ben.<span class="t">build</span>(idea).<span class="t">then</span>(ship);<span c
           <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email"
               autocomplete="email" required=""></div>
         </div>
-        <div class="field"><label for="f-type">What's it about?</label>
+        <div class="field"><label for="f-type">What would you like to discuss?</label>
           <select id="f-type" name="type">
             <option>A job or contract role</option>
             <option>A website or store project</option>

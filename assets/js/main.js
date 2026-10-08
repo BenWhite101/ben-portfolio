@@ -62,7 +62,7 @@
     });
   }
 
-  /* ---- work: show the first four, "See more" reveals the rest ---- */
+  /* ---- work: show the first six, "See more" reveals the rest ---- */
   const moreBtn = document.getElementById('work-more');
   if (moreBtn) {
     const grid = document.querySelector('.work-grid');
