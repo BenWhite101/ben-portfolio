@@ -184,7 +184,7 @@
     aw = Math.max(1, Math.round(hero.clientWidth * .22)); ah = Math.max(1, Math.round(hero.clientHeight * .22)); au.width = aw; au.height = ah;
     hw = hero.clientWidth; hh = hero.clientHeight; hs.width = Math.round(hw * DPR); hs.height = Math.round(hh * DPR);
     const r = mulberry32(77);
-    heroStars = Array.from({ length: Math.round(Math.min(70, Math.max(30, hw * hh / 9000))) }, () => ({ x: r() * hw, y: Math.pow(r(), 1.4) * hh * .8, r: .4 + Math.pow(r(), 3) * 1.1, d: .3 + r() * .7, ph: r() * 6.28, sp: .0004 + r() * .0012 }));
+    heroStars = Array.from({ length: Math.round(Math.min(150, Math.max(60, hw * hh / 5000))) }, () => ({ x: r() * hw, y: Math.pow(r(), 1.4) * hh * .8, r: .4 + Math.pow(r(), 3) * 1.1, d: .3 + r() * .7, ph: r() * 6.28, sp: .0004 + r() * .0012 }));
   }
   function drawHeroStars(t) {
     sctx.setTransform(DPR, 0, 0, DPR, 0, 0); sctx.clearRect(0, 0, hw, hh);
@@ -414,7 +414,7 @@
   /* ---- easter egg: a dragon crosses the ridges now and then, alternating direction ---- */
   const dc = document.createElement('canvas'), dx2 = dc.getContext('2d');
   const DB = { x0: -2.15, x1: 1.35, y0: -1.7, y1: 1.7 }; // dragon bounds in body units
-  const drg = { on: false, dir: 1, p: 0, dur: 14000, wait: 7000, last: 0 };
+  const drg = { on: false, dir: 1, p: 0, dur: 14000, wait: 1500, last: 0 }; // wait only counts down while the forest is on screen
   function dragonPath(x, ft, f) {
     // spine (x, y, half-width) from tail tip to head, tail swaying
     const spine = [[-1.85, .05, .012], [-1.5, .03, .03], [-1.1, 0, .05], [-.7, -.02, .08], [-.4, -.03, .12], [-.1, -.04, .15], [.2, -.05, .14], [.42, -.1, .1], [.6, -.2, .075], [.74, -.3, .066], [.86, -.36, .066], [.95, -.36, .07]]
@@ -459,7 +459,7 @@
       drg.on = true; drg.p = 0; drg.dur = 11000 + W * 4;
     }
     drg.p += dt / drg.dur;
-    if (drg.p >= 1) { drg.on = false; drg.dir *= -1; drg.wait = 15000 + Math.random() * 15000; return; }
+    if (drg.p >= 1) { drg.on = false; drg.dir *= -1; drg.wait = 4000 + Math.random() * 4000; return; }
     const s = Math.max(15, Math.min(30, W * .021)), m = 2.4 * s, p = drg.p;
     // slow wingbeats that fade into glides
     const beat = .5 + .5 * Math.sin(ft * .00045), ph = ft * .0042, f = .3 * (1 - beat) + beat * Math.sin(ph);
