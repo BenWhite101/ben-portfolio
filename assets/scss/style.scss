@@ -1549,6 +1549,61 @@ pre.code {
   outline-offset: 2px;
 }
 
+/* ---------- screenshot scroll hints (experiment) ----------
+   Pairs with the "scroll hints" block in main.js, which adds .scroll-hint,
+   .has-fade, .was-scrolled and .at-end. Delete both blocks to revert. */
+.win-shot.has-fade::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 22%;
+  pointer-events: none;
+  background: linear-gradient(rgba(10, 15, 30, 0), rgba(10, 15, 30, 0.38));
+  transition: opacity 0.35s ease;
+}
+.win-shot.at-end::after {
+  opacity: 0;
+}
+.scroll-hint {
+  position: absolute;
+  bottom: 12px;
+  left: calc(8% + 10px);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px 6px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: rgba(10, 15, 30, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  font: 500 0.72rem var(--f-mono);
+  pointer-events: none;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+.scroll-hint svg {
+  animation: hint-bob 1.6s ease-in-out infinite;
+}
+.mock.was-scrolled .scroll-hint {
+  opacity: 0;
+  transform: translateY(6px);
+}
+@keyframes hint-bob {
+  0%,
+  100% {
+    transform: translateY(-1px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+}
+
 /* lightbox */
 html:has(.lightbox[open]) {
   overflow: hidden;

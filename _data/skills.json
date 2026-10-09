@@ -2,22 +2,22 @@
   {
     "group": "Platforms",
     "c1": "#9d8cff",
-    "items": ["Magento 2", "Hyvä Themes", "Hyvä Checkout", "WordPress", "Eleventy"]
+    "items": ["Magento 2", "Hyvä Themes", "Hyvä Checkout", "WordPress", "Eleventy", "React (Soon!)"]
   },
   {
     "group": "Frontend",
     "c1": "#6ee7b7",
-    "items": ["HTML", "CSS", "SCSS", "LESS", "Tailwind CSS", "JavaScript", "Alpine.js", "Layout XML", "Node"]
+    "items": ["HTML", "CSS", "SCSS", "LESS", "GIT", "PHTML Templating", "Tailwind CSS", "JavaScript", "Alpine.js", "Layout XML", "Responsive and cross-browser testing"]
   },
   {
     "group": "Email",
     "c1": "#b0303a",
-    "items": ["HTML Email", "Transactional Emails", "Email Templating", "Form Setup / Design", "Magento 2 Marketing Emails"]
+    "items": ["Responsive HTML builds", "Transactional templates", "Marketing campaigns", "Magento 2 email theming", "Form setup & design"]
   },
   {
     "group": "Quality & Design",
     "c1": "#67c6ee",
-    "items": ["Accessibility (WCAG 2.2)", "Core Web Vitals", "Performance", "Figma", "CMS Templating", "UI / UX Principles"]
+    "items": ["Accessibility (WCAG 2.2)", "Core Web Vitals",  "Figma", "XD", "Wireframing", "UI / UX Principles", "Photoshop"]
   },
   {
     "group": "Currently learning",

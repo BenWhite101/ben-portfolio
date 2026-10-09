@@ -87,6 +87,53 @@
     lb.addEventListener('click', e => { if (e.target === lb) lb.close(); }); // backdrop click
   }
 
+  /* ---- work screenshots: scroll hints (one-time peek, "Scroll" pill, bottom fade) ----
+     Self-contained experiment: to revert, delete this block and the matching
+     "screenshot scroll hints" block in style.scss. Nothing in the HTML depends on it. */
+  {
+    const ease = k => k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+    const shots = [...document.querySelectorAll('.m-shot')];
+    shots.forEach(shot => {
+      const win = shot.closest('.win-shot'), mock = shot.closest('.mock');
+      const pill = document.createElement('span');
+      pill.className = 'scroll-hint'; pill.setAttribute('aria-hidden', 'true');
+      pill.innerHTML = '<svg viewBox="0 0 16 16" width="12" height="12"><path d="M8 3v9m-3.5-3.5L8 12l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Scroll';
+      mock.appendChild(pill); win.classList.add('has-fade');
+      shot.addEventListener('scroll', () => {
+        if (shot.dataset.peeking) return;
+        if (shot.scrollTop > 8) mock.classList.add('was-scrolled');
+        win.classList.toggle('at-end', shot.scrollTop + shot.clientHeight >= shot.scrollHeight - 4);
+      }, { passive: true });
+      // any real interaction cancels a peek in progress
+      ['wheel', 'touchstart', 'pointerdown', 'keydown'].forEach(ev => shot.addEventListener(ev, () => { shot.dataset.cancel = '1'; }, { passive: true }));
+    });
+
+    function peek(shot) {
+      if (shot.scrollTop > 0 || shot.scrollHeight < shot.clientHeight + 120) return;
+      const dist = Math.min(90, shot.scrollHeight - shot.clientHeight), dur = 1500, t0 = performance.now();
+      shot.dataset.peeking = '1';
+      const step = now => {
+        const k = Math.min(1, (now - t0) / dur);
+        if (shot.dataset.cancel) { delete shot.dataset.peeking; return; }
+        shot.scrollTop = dist * Math.sin(Math.PI * ease(k)); // down, then back up
+        if (k < 1) requestAnimationFrame(step); else { shot.scrollTop = 0; delete shot.dataset.peeking; }
+      };
+      requestAnimationFrame(step);
+    }
+
+    if (!RM) {
+      let queued = 0;
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        const shot = e.target, img = shot.querySelector('img');
+        const go = () => setTimeout(() => peek(shot), 350 + (queued++ % 2) * 250); // stagger cards in the same row
+        img.complete ? go() : img.addEventListener('load', go, { once: true });
+      }), { threshold: .6 });
+      shots.forEach(s => io.observe(s));
+    }
+  }
+
   /* ---- helpers ---- */
   function mulberry32(a) { return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
   function makeNoise(seed) { const r = mulberry32(seed), p = Array.from({ length: 512 }, () => r()); return x => { const i = Math.floor(x), f = x - i, u = f * f * (3 - 2 * f); return p[i & 511] * (1 - u) + p[(i + 1) & 511] * u; }; }
