@@ -96,13 +96,15 @@
     "points": [
       "Created CMS templates and pages throughout the site",
       "Worked with the client to design and refine pages",
-      "Ensured brand guidlines were followed and matched throughout"
+      "Ensured brand guidelines were followed and matched throughout"
       
     ],
     "tags": [
-      "WordPress Build",
+      "WordPress Theme",
+      "ACF / Lazyblocks",
       "CMS Content/Templating",
-      "SCCS",
+      "Edits and Maintenance",
+      "SCSS",
       "SVG"
     ]
   },

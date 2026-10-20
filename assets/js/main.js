@@ -111,7 +111,7 @@
 
     function peek(shot) {
       if (shot.scrollTop > 0 || shot.scrollHeight < shot.clientHeight + 120) return;
-      const dist = Math.min(90, shot.scrollHeight - shot.clientHeight), dur = 1500, t0 = performance.now();
+      const dist = Math.min(90, shot.scrollHeight - shot.clientHeight), dur = 1000, t0 = performance.now();
       shot.dataset.peeking = '1';
       const step = now => {
         const k = Math.min(1, (now - t0) / dur);
