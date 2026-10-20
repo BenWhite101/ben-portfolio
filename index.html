@@ -176,7 +176,7 @@ ben.caresAbout.<span class="t">includes</span>(<span class="s">'detail'</span>);
 
       <div class="work-grid">
         {%- for p in work %}
-        <article class="card"{% if forloop.index > 6 %} data-extra style="--i:{{ forloop.index | minus: 7 }}"{% endif %}>
+        <article class="card"{% if forloop.index > 8 %} data-extra style="--i:{{ forloop.index | minus: 7 }}"{% elsif forloop.index > 6 %} data-extra="mobile" style="--i:{{ forloop.index | minus: 7 }}"{% endif %}>
           <div class="mock" style="--c1:{{ p.c1 }};--c2:{{ p.c2 }}">
             <div class="win win-shot">
               <div class="m-bar" aria-hidden="true"><i></i><i></i><i></i><span>{{ p.url }}</span></div>
@@ -217,7 +217,7 @@ ben.caresAbout.<span class="t">includes</span>(<span class="s">'detail'</span>);
       {%- if extra > 0 %}
       <div class="work-more">
         <button class="btn btn-ghost magnetic" type="button" id="work-more" aria-expanded="false" hidden>
-          Reveal more work <span class="work-more-count">+{{ extra }}</span>
+          Reveal more work <span class="work-more-count hidden-mob">+{{ work.size | minus: 8 }}</span><span class="work-more-count hidden-desk">+{{ extra }}</span>
         </button>
       </div>
       {%- endif %}

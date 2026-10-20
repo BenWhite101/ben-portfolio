@@ -5,7 +5,7 @@
     "url": "apukonline.com",
     "c1": "#3f6b5a",
     "c2": "#0f201b",
-    "meta": "2025 · Magento 2",
+    "meta": "Magento 2",
     "summary": "Frontend improvements across the APUK Magento 2 store.",
     "points": [
       "Redeveloped the site header and footer",
@@ -27,10 +27,10 @@
   {
     "name": "Yuasa Batteries",
     "img": "yuasa.jpg",
-    "url": "yuasa.example",
+    "url": "yuasa.com",
     "c1": "#b0303a",
     "c2": "#26080b",
-    "meta": "2026 · Magento 2",
+    "meta": "Magento 2",
     "summary": "Built the Magento 2 theme end to end, including CMS content and templates.",
     "points": [
       "Frontend theme built end to end, including PLP, PDP, Basket and Checkout",
@@ -50,10 +50,10 @@
     {
     "name": "Rehome",
     "img": "rehome.jpg",
-    "url": "rehome.example",
+    "url": "rehome.co.uk",
     "c1": "#8a6a3a",
     "c2": "#1f170a",
-    "meta": "2024 · Magento 2",
+    "meta": "Magento 2",
     "summary": "Brought the rebrand from Used Kitchen Exchange to Rehome to life in Magento 2, building the new designs for:",
     "points": [
       "Home and CMS pages",
@@ -74,7 +74,7 @@
     "url": "shop.warnerbros.co.uk",
     "c1": "#2c5fa8",
     "c2": "#08142a",
-    "meta": "2020 · Magento 2",
+    "meta": "Magento 2",
     "summary": "Frontend theming and ongoing site maintenance.",
     "points": [
       "Created templates from CMS pages through to checkout",
@@ -86,12 +86,54 @@
     ]
   },
   {
+    "name": "Creative UK",
+    "img": "creative-uk.png",
+    "url": "wearecreative.uk",
+    "c1": "#d4502a",
+    "c2": "#2a0d06",
+    "meta": "WordPress",
+    "summary": "Worked with Creative UK (Creative England) to produce CMS pages and templates, edited and maintained the WordPress site.",
+    "points": [
+      "Created CMS templates and pages throughout the site",
+      "Worked with the client to design and refine pages",
+      "Ensured brand guidlines were followed and matched throughout"
+      
+    ],
+    "tags": [
+      "WordPress Build",
+      "CMS Content/Templating",
+      "SCCS",
+      "SVG"
+    ]
+  },
+  {
+    "name": "Bradfords",
+    "img": "bradfords.png",
+    "url": "bradfords.co.uk",
+    "c1": "#6b4fa0",
+    "c2": "#150d26",
+    "meta": "Hyvä Conversion",
+    "summary": "Magento 2 site reconstructed to a modern Hyvä Theme",
+    "points": [
+      "Collaborated closely with the Frontend Lead to reconstruct the original design as close as possible",
+      "Converted templates and modules from SCSS to Tailwind CSS",
+      "Fixed existing site styling issues + improvements to CLS Core Web Vitals scores"
+    ],
+    "tags": [
+      "Magento 2 Theme Build",
+      "Hyvä",
+      "Tailwind",
+      "Alpine functionality",
+      "Core Web Vitals improvements"
+    ]
+  },
+  {
     "name": "Bathshack",
     "img": "bathshack.png",
     "url": "bathshack.com",
     "c1": "#2f6f8f",
     "c2": "#0a1a26",
-    "meta": "2021 · Magento 2",
+    "meta": "Magento 2",
     "summary": "A full Magento 2 build, replacing their previous Magento 1 store, with new CMS content pages",
     "points": [
       "Created 20+ CMS templates (e.g. home, showrooms, case studies, tile calculator)",
@@ -109,37 +151,13 @@
       "CMS"
     ]
   },
-
-
-
-  {
-    "name": "Bradfords",
-    "img": "bradfords.png",
-    "url": "bradfords.example",
-    "c1": "#6b4fa0",
-    "c2": "#150d26",
-    "meta": "2026 · Hyvä Conversion",
-    "summary": "Magento 2 site reconstructed to a modern Hyvä Theme",
-    "points": [
-      "Collaborated closely with the Frontend Lead to reconstruct the original design as close as possible",
-      "Converted templates and modules from SCSS to Tailwind CSS",
-      "Fixed existing site styling issues + improvements to CLS Core Web Vitals scores"
-    ],
-    "tags": [
-      "Magento 2 Theme Build",
-      "Hyvä",
-      "Tailwind",
-      "Alpine functionality",
-      "Core Web Vitals improvements"
-    ]
-  },
   {
     "name": "Portfolio Build",
     "img": "marlena.png",
     "url": "marlenakaminska.com",
     "c1": "#a0507a",
     "c2": "#240b19",
-    "meta": "2026 · Eleventy Build",
+    "meta": "Eleventy Build",
     "summary": "Used 11ty with a Skeleton template to develop a modern, personalised portfolio",
     "points": [
       "Core Web Vitals in the green",
@@ -162,10 +180,10 @@
   {
     "name": "Filming in England",
     "img": "fie.png",
-    "url": "filminginengland.example",
+    "url": "filminginengland.co.uk",
     "c1": "#7a4fd0",
     "c2": "#1a1033",
-    "meta": "2021 · WordPress Build",
+    "meta": "WordPress Build",
     "summary": "Helped FIE develop multiple page templates and layouts used throughout the site",
     "points": [
       "Created an interactive + responsive SVG map, linking to different locations",
@@ -186,7 +204,7 @@
     "url": "grayandcosolicitors.co.uk",
     "c1": "#5b6478",
     "c2": "#141822",
-    "meta": "2020 · WordPress Build",
+    "meta": "WordPress Build",
     "summary": "A fresh new WordPress site to improve contact rates and form submissions",
     "points": [
       "Designed sections of the site, working closely with the company and requirements",
@@ -204,10 +222,10 @@
     {
     "name": "Farbgel",
     "img": "farbgel.png",
-    "url": "farbgel.example",
+    "url": "farbgel.co.uk",
     "c1": "#b87a26",
     "c2": "#2a1a08",
-    "meta": "2020 · Magento 2 Single Product Site",
+    "meta": "Magento 2 Single Product Site",
     "summary": "Moved the store from Magento 1 to Magento 2, alongside building a redesign.",
     "tags": [
       "Magento 2 Theme Build",
@@ -220,7 +238,7 @@
     "url": "heamar.co.uk",
     "c1": "#a8443f",
     "c2": "#240c0b",
-    "meta": "2024 · Magento 2",
+    "meta": "Magento 2",
     "summary": "New site theme constructed to modernise and improve outdated logistics/web pages",
     "tags": [
       "Magento 2 Theme Build",
@@ -235,7 +253,7 @@
     "url": "lifechoicelegal.co.uk",
     "c1": "#3d5a9c",
     "c2": "#0c1428",
-    "meta": "2019 · WordPress Site Build",
+    "meta": "WordPress Site Build",
     "summary": "I updated a WordPress build with a custom-made theme and new content/templates, focused on simplifying contact methods and increasing form submission rates",
     "metrics": [
       { "value": "36%", "label": "increased form submissions" }
@@ -253,7 +271,7 @@
     "url": "mcafitness.co.uk",
     "c1": "#c0563a",
     "c2": "#2a0f08",
-    "meta": "2022 · WordPress Site Build",
+    "meta": "WordPress Site Build",
     "summary": "Developed a new WordPress Theme, allowing users to view and book various events through a an event plugin. Created custom event pages with unique blocks conveying various points of interest (e.g. Triathlon distances)",
     "tags": [
       "WordPress",
@@ -265,10 +283,10 @@
   {
     "name": "Meteor Electrical",
     "img": "meteor.jpg",
-    "url": "meteorelectrical.example",
+    "url": "meteorelectrical.co.uk",
     "c1": "#2f7d6d",
     "c2": "#09201b",
-    "meta": "2022 · Magento 2",
+    "meta": "Magento 2",
     "summary": "Following Figma designs, I created the design system, elements and blocks including the Header, CMS, Footer, PLP and PDP pages. This was a new Magento 2 site to upgrade from and retire the customer's existing Magento 1 site.",
     "tags": [
       "Magento 2 Theme Build",
@@ -283,10 +301,10 @@
   {
     "name": "Huws Gray",
     "img": "huws.png",
-    "url": "huwsgray.example",
+    "url": "huwsgray.co.uk",
     "c1": "#4b7a3a",
     "c2": "#0f1d0a",
-    "meta": "2026 · Hyvä Theme",
+    "meta": "Hyvä Theme",
     "summary": "Various work through developing templates or building out designs in Hyvä, with Tailwind CSS and Alpine.js",
     "tags": [
       "Magento 2 Theme Build",

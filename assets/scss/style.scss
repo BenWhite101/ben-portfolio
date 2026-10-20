@@ -1282,11 +1282,11 @@ pre.code {
   color: var(--amber);
 }
 
-/* see more: JS collapses to four cards, then fades the rest in, staggered */
-.work-grid.is-collapsed .card[data-extra] {
+/* see more: JS collapses to eight cards (six on mobile), then fades the rest in, staggered */
+.work-grid.is-collapsed .card[data-extra]:not([data-extra="mobile"]) {
   display: none;
 }
-.work-grid.is-revealing .card[data-extra] {
+.work-grid.is-revealing .card[data-extra]:not([data-extra="mobile"]) {
   /* "backwards" only, so the tilt transform takes over again once it finishes */
   animation: cardIn 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
   animation-delay: calc(min(var(--i, 0), 6) * 0.08s);
@@ -2192,9 +2192,21 @@ footer a:hover {
 }
 
 /* ---------- responsive ---------- */
+@media (min-width: 921px) {
+  .hidden-desk {
+    display: none !important;
+  }
+}
 @media (max-width: 920px) {
   .hidden-mob {
     display: none !important;
+  }
+  .work-grid.is-collapsed .card[data-extra="mobile"] {
+    display: none;
+  }
+  .work-grid.is-revealing .card[data-extra="mobile"] {
+    animation: cardIn 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+    animation-delay: calc(min(var(--i, 0), 6) * 0.08s);
   }
   .hero-grid,
   .forest-inner,

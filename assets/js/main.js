@@ -62,7 +62,7 @@
     });
   }
 
-  /* ---- work: show the first six, "See more" reveals the rest ---- */
+  /* ---- work: show the first eight (six on mobile), "See more" reveals the rest ---- */
   const moreBtn = document.getElementById('work-more');
   if (moreBtn) {
     const grid = document.querySelector('.work-grid');
@@ -70,7 +70,8 @@
     moreBtn.addEventListener('click', () => {
       grid.classList.remove('is-collapsed'); grid.classList.add('is-revealing');
       moreBtn.setAttribute('aria-expanded', 'true'); moreBtn.parentElement.hidden = true;
-      grid.querySelector('[data-extra]')?.querySelector('.m-shot')?.focus({ preventScroll: true });
+      const firstNew = matchMedia('(max-width: 920px)').matches ? '[data-extra]' : '[data-extra]:not([data-extra="mobile"])';
+      grid.querySelector(firstNew)?.querySelector('.m-shot')?.focus({ preventScroll: true });
     });
   }
 
