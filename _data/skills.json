@@ -2,12 +2,12 @@
   {
     "group": "Platforms",
     "c1": "#9d8cff",
-    "items": ["Magento 2", "Hyvä Themes", "Hyvä Checkout", "WordPress", "Eleventy", "React (Soon!)"]
+    "items": ["Magento 2", "Hyvä Themes", "Hyvä Checkout", "WordPress", "Eleventy", "Shopify 2.0"]
   },
   {
     "group": "Frontend",
     "c1": "#6ee7b7",
-    "items": ["HTML", "CSS", "SCSS", "LESS", "GIT", "PHTML Templating", "Tailwind CSS", "JavaScript", "Alpine.js", "Layout XML", "Responsive and cross-browser testing"]
+    "items": ["HTML", "CSS", "SCSS", "LESS", "GIT", "PHTML Templating", "Tailwind CSS", "JavaScript", "Alpine.js", "Layout XML", "Responsive and cross-browser testing",  "React (Soon!)"]
   },
   {
     "group": "Email",
