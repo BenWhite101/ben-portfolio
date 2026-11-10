@@ -1,9 +1,9 @@
 [
   {
-    "name": "Shotframe",
+    "name": "Easy Device Mockup Generator",
     "img": "shotframe.png",
     "fit": true,
-    "alt": "Screenshot of the Shotframe app showing a laptop mockup on a purple gradient background",
+    "alt": "Screenshot of the Device Mockup app showing a laptop mockup on a purple gradient background",
     "url": "remarkable-baklava-592fa2.netlify.app",
     "live": "https://remarkable-baklava-592fa2.netlify.app",
     "c1": "#7c5cff",
@@ -11,7 +11,7 @@
     "meta": "React · Side project",
     "summary": "A small React app that turns a plain screenshot into a clean device mockup in seconds.",
     "points": [
-      "The problem: making a good mockup meant opening Photoshop or Figma every single time",
+      "The problem: making a good mockup meant opening Photoshop or Figma every single time. I personally needed a quick way to generate these with a bit of customisation",
       "Mockups matter because people judge a design faster when they see it on a real-looking laptop or phone, not as a flat screenshot",
       "Now it's drop in a screenshot, pick a device and background, and download a sharp PNG"
     ],
