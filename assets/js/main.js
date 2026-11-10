@@ -93,7 +93,7 @@
      "screenshot scroll hints" block in style.scss. Nothing in the HTML depends on it. */
   {
     const ease = k => k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
-    const shots = [...document.querySelectorAll('.m-shot')];
+    const shots = [...document.querySelectorAll('.m-shot:not(.is-fit)')];
     shots.forEach(shot => {
       const win = shot.closest('.win-shot'), mock = shot.closest('.mock');
       const pill = document.createElement('span');

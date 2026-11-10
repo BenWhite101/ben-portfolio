@@ -1518,6 +1518,15 @@ pre.code {
   width: 100%;
   height: auto;
 }
+/* app-sized (non-scrolling) screenshots fill the frame instead of leaving a white gap */
+.m-shot.is-fit {
+  overflow: hidden;
+}
+.m-shot.is-fit img {
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
 .zoom-btn {
   position: absolute;
   bottom: 12px;

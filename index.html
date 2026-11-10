@@ -183,8 +183,8 @@ ben.caresAbout.<span class="t">includes</span>(<span class="s">'detail'</span>);
           <div class="mock" style="--c1:{{ p.c1 }};--c2:{{ p.c2 }}">
             <div class="win win-shot">
               <div class="m-bar" aria-hidden="true"><i></i><i></i><i></i><span>{{ p.url }}</span></div>
-              <div class="m-shot" tabindex="0" role="region" aria-label="{{ p.name }} screenshot (scrollable)">
-                <img src="/assets/img/{{ p.img }}" alt="Full-page screenshot of the {{ p.name }} website" loading="lazy" decoding="async">
+              <div class="m-shot{% if p.fit %} is-fit{% endif %}"{% unless p.fit %} tabindex="0" role="region" aria-label="{{ p.name }} screenshot (scrollable)"{% endunless %}>
+                <img src="/assets/img/{{ p.img }}" alt="{% if p.alt %}{{ p.alt }}{% else %}Full-page screenshot of the {{ p.name }} website{% endif %}" loading="lazy" decoding="async">
               </div>
             </div>
             <button class="zoom-btn" type="button" data-zoom="/assets/img/{{ p.img }}" data-title="{{ p.name }}"
@@ -211,7 +211,7 @@ ben.caresAbout.<span class="t">includes</span>(<span class="s">'detail'</span>);
               {%- endfor %}
             </div>
             {%- endif %}
-            <div class="tags" style="--c1:#9d8cff">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}{% if p.link %}<a href="{{ p.link }}">Case study →</a>{% endif %}</div>
+            <div class="tags" style="--c1:#9d8cff">{% for t in p.tags %}<span>{{ t }}</span>{% endfor %}{% if p.link %}<a href="{{ p.link }}">Case study →</a>{% endif %}{% if p.live %}<a href="{{ p.live }}" target="_blank" rel="noopener" aria-label="Try {{ p.name }} live (opens in a new tab)">Try it live →</a>{% endif %}</div>
           </div>
         </article>
         {%- endfor %}
