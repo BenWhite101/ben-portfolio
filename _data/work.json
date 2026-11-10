@@ -5,24 +5,17 @@
     "url": "apukonline.com",
     "c1": "#3f6b5a",
     "c2": "#0f201b",
-    "meta": "Magento 2",
-    "summary": "Frontend improvements across the APUK Magento 2 store.",
+    "meta": "Magento 2 · Frontend",
+    "summary": "Reworked key parts of APUK's Magento 2 storefront to make it more stable and more accessible.",
     "points": [
-      "Redeveloped the site header and footer",
-      "Built new CMS pages",
-      "Improved accessibility across the site"
+      "Rebuilt the site header and footer",
+      "Built new CMS pages from Figma designs",
+      "Fixed accessibility issues across the store"
     ],
     "metrics": [
-      { "value": "0.092", "label": "CLS, reduced to" }
+      { "value": "0.092", "label": "CLS after the rework" }
     ],
-    "tags": [
-      "Magento 2 Theme Build",
-      "eCommerce",
-      "CMS",
-      "SCSS",
-      "Figma",
-      "Core Web Vitals improvements"
-    ]
+    "tags": ["Magento 2", "SCSS", "Figma", "Accessibility", "Core Web Vitals"]
   },
   {
     "name": "Yuasa Batteries",
@@ -30,60 +23,43 @@
     "url": "yuasa.com",
     "c1": "#b0303a",
     "c2": "#26080b",
-    "meta": "Magento 2",
-    "summary": "Built the Magento 2 theme end to end, including CMS content and templates.",
+    "meta": "Magento 2 · Theme build",
+    "summary": "Built Yuasa's Magento 2 theme end to end, from CMS content through to checkout.",
     "points": [
-      "Frontend theme built end to end, including PLP, PDP, Basket and Checkout",
-      "Worked closely with the backend team on a bespoke battery lookup module",
-      "Created templates and reusable components"
-
+      "Built every core page: product listing, product, basket and checkout",
+      "Worked with the backend team on a bespoke battery lookup module",
+      "Created reusable templates and components for CMS content"
     ],
-    "tags": [
-      "Magento 2 Theme Build",
-      "CMS Content/Templating",
-      "SCSS",
-      "Marketing email development",
-      "Core Web Vitals improvements"
-
-    ]
+    "tags": ["Magento 2", "SCSS", "CMS templates", "HTML email", "Core Web Vitals"]
   },
-    {
+  {
     "name": "Rehome",
     "img": "rehome.jpg",
     "url": "rehome.co.uk",
     "c1": "#8a6a3a",
     "c2": "#1f170a",
-    "meta": "Magento 2",
-    "summary": "Brought the rebrand from Used Kitchen Exchange to Rehome to life in Magento 2, building the new designs for:",
+    "meta": "Magento 2 · Rebrand",
+    "summary": "Rolled out the rebrand from Used Kitchen Exchange to Rehome across the Magento 2 storefront.",
     "points": [
-      "Home and CMS pages",
-      "Product listing (PLP) and product (PDP) pages",
-      "Checkout"
+      "Built the new home and CMS page designs",
+      "Restyled the product listing and product pages",
+      "Reskinned checkout to match the new brand"
     ],
-    "tags": [
-      "Magento 2 Theme Build",
-      "CMS Content/Templating",
-      "SCSS",
-      "Marketing email development",
-      "Core Web Vitals improvements"
-    ]
+    "tags": ["Magento 2", "SCSS", "CMS templates", "HTML email", "Core Web Vitals"]
   },
-   {
+  {
     "name": "Warner Bros. UK",
     "img": "warner.png",
     "url": "shop.warnerbros.co.uk",
     "c1": "#2c5fa8",
     "c2": "#08142a",
-    "meta": "Magento 2",
-    "summary": "Frontend theming and ongoing site maintenance.",
+    "meta": "Magento 2 · Theming & maintenance",
+    "summary": "Themed the Warner Bros. UK Magento 2 shop and kept it running with ongoing frontend maintenance.",
     "points": [
-      "Created templates from CMS pages through to checkout",
-      "Built and populated the mega menu, matched closely to Figma designs"
+      "Built templates from CMS pages through to checkout",
+      "Built and populated the mega menu, closely matching the Figma designs"
     ],
-    "tags": [
-      "Magento 2 Theme Build"
-      
-    ]
+    "tags": ["Magento 2", "Figma", "CMS templates"]
   },
   {
     "name": "Creative UK",
@@ -91,22 +67,14 @@
     "url": "wearecreative.uk",
     "c1": "#d4502a",
     "c2": "#2a0d06",
-    "meta": "WordPress",
-    "summary": "Worked with Creative UK (Creative England) to produce CMS pages and templates, edited and maintained the WordPress site.",
+    "meta": "WordPress · Templates & maintenance",
+    "summary": "Built CMS pages and templates for Creative UK (Creative England) and looked after their WordPress site.",
     "points": [
-      "Created CMS templates and pages throughout the site",
-      "Worked with the client to design and refine pages",
-      "Ensured brand guidelines were followed and matched throughout"
-      
+      "Built CMS templates and pages across the site",
+      "Designed and refined pages together with the client",
+      "Kept every page in line with the brand guidelines"
     ],
-    "tags": [
-      "WordPress Theme",
-      "ACF / Lazyblocks",
-      "CMS Content/Templating",
-      "Edits and Maintenance",
-      "SCSS",
-      "SVG"
-    ]
+    "tags": ["WordPress", "ACF / Lazy Blocks", "SCSS", "SVG"]
   },
   {
     "name": "Bradfords",
@@ -114,20 +82,14 @@
     "url": "bradfords.co.uk",
     "c1": "#6b4fa0",
     "c2": "#150d26",
-    "meta": "Hyvä Conversion",
-    "summary": "Magento 2 site reconstructed to a modern Hyvä Theme",
+    "meta": "Magento 2 · Hyvä conversion",
+    "summary": "Rebuilt Bradfords' Magento 2 storefront on Hyvä, keeping the original design while modernising the code underneath.",
     "points": [
-      "Collaborated closely with the Frontend Lead to reconstruct the original design as close as possible",
+      "Worked with the Frontend Lead to match the original design as closely as possible",
       "Converted templates and modules from SCSS to Tailwind CSS",
-      "Fixed existing site styling issues + improvements to CLS Core Web Vitals scores"
+      "Fixed existing styling issues and improved CLS scores"
     ],
-    "tags": [
-      "Magento 2 Theme Build",
-      "Hyvä",
-      "Tailwind",
-      "Alpine functionality",
-      "Core Web Vitals improvements"
-    ]
+    "tags": ["Hyvä", "Tailwind CSS", "Alpine.js", "Core Web Vitals"]
   },
   {
     "name": "Bathshack",
@@ -135,23 +97,17 @@
     "url": "bathshack.com",
     "c1": "#2f6f8f",
     "c2": "#0a1a26",
-    "meta": "Magento 2",
-    "summary": "A full Magento 2 build, replacing their previous Magento 1 store, with new CMS content pages",
+    "meta": "Magento 2 · Full build (M1 → M2)",
+    "summary": "Built a new Magento 2 store to replace Bathshack's Magento 1 site, with a full set of new CMS content pages.",
     "points": [
-      "Created 20+ CMS templates (e.g. home, showrooms, case studies, tile calculator)",
-      "Frontend theme built end to end, including PLP, PDP, Basket and Checkout",
-      "Built to sell, with a clean layout that lets each product's design speak for itself"
+      "Built the whole storefront theme, from product listing to checkout",
+      "CMS templates include home, showrooms, case studies and a tile calculator",
+      "Kept layouts clean so the products take centre stage"
     ],
-     "metrics": [
-      { "value": "20+", "label": "individual CMS designs built" }
+    "metrics": [
+      { "value": "20+", "label": "CMS templates built" }
     ],
-    "tags": [
-      "Magento 2 Theme Build",
-      "eCommerce",
-      "Full theme build",
-      "LESS",
-      "CMS"
-    ]
+    "tags": ["Magento 2", "LESS", "CMS templates"]
   },
   {
     "name": "Portfolio Build",
@@ -159,46 +115,34 @@
     "url": "marlenakaminska.com",
     "c1": "#a0507a",
     "c2": "#240b19",
-    "meta": "Eleventy Build",
-    "summary": "Used 11ty with a Skeleton template to develop a modern, personalised portfolio",
+    "meta": "Eleventy · Portfolio",
+    "summary": "Designed, built and deployed a personal portfolio with Eleventy, starting from a Skeleton template.",
     "points": [
-      "Core Web Vitals in the green",
-      "Set up end to end, from design to deployment"
+      "Took it from design through to deployment on Netlify",
+      "All Core Web Vitals in the green"
     ],
-     "metrics": [
+    "metrics": [
       { "value": "98", "label": "Lighthouse performance" },
       { "value": "+62%", "label": "contact interactions" }
     ],
-    "tags": [
-      "Portfolio",
-      "Eleventy",
-      "Netlify",
-      "Design",
-      "SCSS",
-      "Core Web Vitals improvements"
-    ]
+    "tags": ["Eleventy", "SCSS", "Netlify", "Design"]
   },
-    
   {
     "name": "Filming in England",
     "img": "fie.png",
     "url": "filminginengland.co.uk",
     "c1": "#7a4fd0",
     "c2": "#1a1033",
-    "meta": "WordPress Build",
-    "summary": "Helped FIE develop multiple page templates and layouts used throughout the site",
+    "meta": "WordPress · Templates",
+    "summary": "Built page templates and layouts used across the Filming in England site.",
     "points": [
-      "Created an interactive + responsive SVG map, linking to different locations",
-      "Managed content and imagery"
-    ],
-    "tags": [
-      "WordPress Build",
-      "CMS Content/Templating",
-      "SVG"
+      "Built an interactive, responsive SVG map linking to filming locations",
+      "Managed site content and imagery"
     ],
     "metrics": [
-      { "value": "+41%", "label": "pages per session viewed" }
-    ]
+      { "value": "+41%", "label": "pages viewed per session" }
+    ],
+    "tags": ["WordPress", "SVG", "CMS templates"]
   },
   {
     "name": "Gray & Co",
@@ -206,33 +150,27 @@
     "url": "grayandcosolicitors.co.uk",
     "c1": "#5b6478",
     "c2": "#141822",
-    "meta": "WordPress Build",
-    "summary": "A fresh new WordPress site to improve contact rates and form submissions",
+    "meta": "WordPress · Site build",
+    "summary": "Built a new WordPress site for Gray & Co, designed to make it easier for clients to get in touch.",
     "points": [
-      "Designed sections of the site, working closely with the company and requirements",
-      "Developed and templated pages, allowing user content and edits through the CMS"
-    ],
-    "tags": [
-      "WordPress Build",
-      "CMS Content/Templating",
-      "Form setup + email"
+      "Designed sections of the site around the firm's requirements",
+      "Built page templates that staff can edit through the CMS",
+      "Set up the contact forms and email notifications"
     ],
     "metrics": [
-      { "value": "+26%", "label": "form submission rate" }
-    ]
+      { "value": "+26%", "label": "form submissions" }
+    ],
+    "tags": ["WordPress", "Design", "Forms"]
   },
-    {
+  {
     "name": "Farbgel",
     "img": "farbgel.png",
     "url": "farbgel.co.uk",
     "c1": "#b87a26",
     "c2": "#2a1a08",
-    "meta": "Magento 2 Single Product Site",
-    "summary": "Moved the store from Magento 1 to Magento 2, alongside building a redesign.",
-    "tags": [
-      "Magento 2 Theme Build",
-      "eCommerce"
-    ]
+    "meta": "Magento 2 · Single-product store",
+    "summary": "Moved Farbgel from Magento 1 to Magento 2 and built a redesigned storefront alongside the migration.",
+    "tags": ["Magento 2", "Migration", "eCommerce"]
   },
   {
     "name": "Heamar",
@@ -240,14 +178,9 @@
     "url": "heamar.co.uk",
     "c1": "#a8443f",
     "c2": "#240c0b",
-    "meta": "Magento 2",
-    "summary": "New site theme constructed to modernise and improve outdated logistics/web pages",
-    "tags": [
-      "Magento 2 Theme Build",
-      "eCommerce",
-      "SCSS",
-      "CMS"
-    ]
+    "meta": "Magento 2 · Theme build",
+    "summary": "Built a new Magento 2 theme to modernise Heamar's outdated logistics and web pages.",
+    "tags": ["Magento 2", "SCSS", "CMS templates"]
   },
   {
     "name": "Life Choice Legal",
@@ -255,17 +188,17 @@
     "url": "lifechoicelegal.co.uk",
     "c1": "#3d5a9c",
     "c2": "#0c1428",
-    "meta": "WordPress Site Build",
-    "summary": "I updated a WordPress build with a custom-made theme and new content/templates, focused on simplifying contact methods and increasing form submission rates",
-    "metrics": [
-      { "value": "36%", "label": "increased form submissions" }
+    "meta": "WordPress · Site rebuild",
+    "summary": "Rebuilt Life Choice Legal's WordPress site with a custom theme, simplifying the ways visitors can get in touch.",
+    "points": [
+      "Built a custom theme with new content and templates",
+      "Set up the contact forms and email notifications",
+      "Edited imagery for the new pages"
     ],
-    "tags": [
-      "WordPress",
-      "LESS",
-      "Form setup + email",
-      "Image editing"
-    ]
+    "metrics": [
+      { "value": "+36%", "label": "form submissions" }
+    ],
+    "tags": ["WordPress", "LESS", "Forms"]
   },
   {
     "name": "McA Fitness",
@@ -273,14 +206,13 @@
     "url": "mcafitness.co.uk",
     "c1": "#c0563a",
     "c2": "#2a0f08",
-    "meta": "WordPress Site Build",
-    "summary": "Developed a new WordPress Theme, allowing users to view and book various events through a an event plugin. Created custom event pages with unique blocks conveying various points of interest (e.g. Triathlon distances)",
-    "tags": [
-      "WordPress",
-      "LESS",
-      "Event management",
-      "Design"
-    ]
+    "meta": "WordPress · Site build",
+    "summary": "Built a new WordPress theme for McA Fitness so visitors can browse and book events.",
+    "points": [
+      "Integrated an events plugin for browsing and booking",
+      "Built custom event pages with bespoke blocks, such as triathlon distances"
+    ],
+    "tags": ["WordPress", "LESS", "Events", "Design"]
   },
   {
     "name": "Meteor Electrical",
@@ -288,34 +220,23 @@
     "url": "meteorelectrical.co.uk",
     "c1": "#2f7d6d",
     "c2": "#09201b",
-    "meta": "Magento 2",
-    "summary": "Following Figma designs, I created the design system, elements and blocks including the Header, CMS, Footer, PLP and PDP pages. This was a new Magento 2 site to upgrade from and retire the customer's existing Magento 1 site.",
-    "tags": [
-      "Magento 2 Theme Build",
-      "CMS Content/Templating",
-      "LESS",
-      "Marketing email development"
-    ]
+    "meta": "Magento 2 · Full build (M1 → M2)",
+    "summary": "Built a new Magento 2 site from Figma designs to replace Meteor Electrical's Magento 1 store.",
+    "points": [
+      "Created the design system, elements and blocks",
+      "Built the header, footer, CMS, product listing and product pages",
+      "Developed marketing emails"
+    ],
+    "tags": ["Magento 2", "LESS", "Figma", "HTML email"]
   },
-  
- 
-  
   {
     "name": "Huws Gray",
     "img": "huws.png",
     "url": "huwsgray.co.uk",
     "c1": "#4b7a3a",
     "c2": "#0f1d0a",
-    "meta": "Hyvä Theme",
-    "summary": "Various work through developing templates or building out designs in Hyvä, with Tailwind CSS and Alpine.js",
-    "tags": [
-      "Magento 2 Theme Build",
-      "Hyvä",
-      "Tailwind",
-      "CMS Content/Templating",
-      "Alpine functionality"
-    ]
+    "meta": "Magento 2 · Hyvä",
+    "summary": "Built templates and turned designs into working pages on Huws Gray's Hyvä storefront.",
+    "tags": ["Hyvä", "Tailwind CSS", "Alpine.js", "CMS templates"]
   }
-
-  
 ]
