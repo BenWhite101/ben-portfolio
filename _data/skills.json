@@ -2,7 +2,7 @@
   {
     "group": "Platforms",
     "c1": "#9d8cff",
-    "items": ["Magento 2", "Hyvä Themes", "Hyvä Checkout", "WordPress", "Eleventy", "Shopify 2.0"]
+    "items": ["React","Magento 2", "Hyvä Themes", "Hyvä Checkout", "WordPress", "Eleventy", "Shopify 2.0"]
   },
   {
     "group": "Frontend",
@@ -23,6 +23,6 @@
     "group": "Currently learning",
     "c1": "#f4a062",
     "learning": true,
-    "items": ["React", "TypeScript", "Next.js", "Shopify Theming"]
+    "items": ["TypeScript", "Next.js", "Shopify Theming"]
   }
 ]
