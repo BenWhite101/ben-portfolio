@@ -5,9 +5,9 @@
     "items": ["Magento 2", "Hyvä Themes", "Hyvä Checkout", "WordPress", "Eleventy", "Shopify 2.0"]
   },
   {
-    "group": "Frontend",
+    "group": "Code",
     "c1": "#6ee7b7",
-    "items": ["HTML", "CSS", "SCSS", "LESS", "React", "GIT", "PHTML Templating", "Tailwind CSS", "JavaScript", "Alpine.js", "Layout XML", "Responsive and cross-browser testing"]
+    "items": ["HTML", "CSS", "SCSS", "LESS", "JavaScript", "React", "Alpine.js", "jQuery", "Tailwind CSS", "Liquid", "PHTML Templating", "Layout XML", "REST APIs", "Vite", "Git", "AI-assisted development", "Agentic coding"]
   },
   {
     "group": "Email",
@@ -17,7 +17,7 @@
   {
     "group": "Quality & Design",
     "c1": "#67c6ee",
-    "items": ["Accessibility (WCAG 2.2)", "Core Web Vitals",  "Figma", "XD", "Wireframing", "UI / UX Principles", "Photoshop"]
+    "items": ["Accessibility (WCAG 2.2)", "Core Web Vitals", "Responsive and cross-browser testing", "Figma", "XD", "Wireframing", "UI / UX Principles", "Photoshop"]
   },
   {
     "group": "Currently learning",
